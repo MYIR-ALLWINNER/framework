@@ -1,0 +1,27 @@
+QMAKE_CXX.QT_COMPILER_STDCXX = 201402L
+QMAKE_CXX.QMAKE_GCC_MAJOR_VERSION = 7
+QMAKE_CXX.QMAKE_GCC_MINOR_VERSION = 4
+QMAKE_CXX.QMAKE_GCC_PATCH_VERSION = 1
+QMAKE_CXX.COMPILER_MACROS = \
+    QT_COMPILER_STDCXX \
+    QMAKE_GCC_MAJOR_VERSION \
+    QMAKE_GCC_MINOR_VERSION \
+    QMAKE_GCC_PATCH_VERSION
+QMAKE_CXX.INCDIRS = \
+    /home/lcy/t507/out/gcc-linaro-7.4.1-2019.02-x86_64_aarch64-linux-gnu/aarch64-linux-gnu/include/c++/7.4.1 \
+    /home/lcy/t507/out/gcc-linaro-7.4.1-2019.02-x86_64_aarch64-linux-gnu/aarch64-linux-gnu/include/c++/7.4.1/aarch64-linux-gnu \
+    /home/lcy/t507/out/gcc-linaro-7.4.1-2019.02-x86_64_aarch64-linux-gnu/aarch64-linux-gnu/include/c++/7.4.1/backward \
+    /home/lcy/t507/out/gcc-linaro-7.4.1-2019.02-x86_64_aarch64-linux-gnu/lib/gcc/aarch64-linux-gnu/7.4.1/include \
+    /home/lcy/t507/out/gcc-linaro-7.4.1-2019.02-x86_64_aarch64-linux-gnu/lib/gcc/aarch64-linux-gnu/7.4.1/include-fixed \
+    /home/lcy/t507/out/gcc-linaro-7.4.1-2019.02-x86_64_aarch64-linux-gnu/aarch64-linux-gnu/include \
+    /home/lcy/t507/out/t507/demo2.0/longan/buildroot/host/usr/aarch64-buildroot-linux-gnu/sysroot/usr/include
+QMAKE_CXX.LIBDIRS = \
+    /home/lcy/t507/out/gcc-linaro-7.4.1-2019.02-x86_64_aarch64-linux-gnu/lib/gcc/aarch64-linux-gnu/7.4.1 \
+    /home/lcy/t507/out/gcc-linaro-7.4.1-2019.02-x86_64_aarch64-linux-gnu/lib/gcc/aarch64-linux-gnu \
+    /home/lcy/t507/out/gcc-linaro-7.4.1-2019.02-x86_64_aarch64-linux-gnu/lib/gcc \
+    /home/lcy/t507/out/gcc-linaro-7.4.1-2019.02-x86_64_aarch64-linux-gnu/aarch64-linux-gnu/lib64 \
+    /home/lcy/t507/out/t507/demo2.0/longan/buildroot/host/usr/aarch64-buildroot-linux-gnu/sysroot/lib64 \
+    /home/lcy/t507/out/t507/demo2.0/longan/buildroot/host/usr/aarch64-buildroot-linux-gnu/sysroot/usr/lib64 \
+    /home/lcy/t507/out/gcc-linaro-7.4.1-2019.02-x86_64_aarch64-linux-gnu/aarch64-linux-gnu/lib \
+    /home/lcy/t507/out/t507/demo2.0/longan/buildroot/host/usr/aarch64-buildroot-linux-gnu/sysroot/lib \
+    /home/lcy/t507/out/t507/demo2.0/longan/buildroot/host/usr/aarch64-buildroot-linux-gnu/sysroot/usr/lib

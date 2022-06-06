@@ -1,0 +1,32 @@
+Target = memTestDE
+
+include ../makefile_cfg
+
+SDK_PATH = ../../sdk_lib
+
+INC += -I$(SDK_PATH)/include/ \
+	-I$(SDK_PATH)/include/disp2
+
+LDFLAGS = -L$(SDK_PATH)/lib64 -L$(SDK_PATH)/libs/ -L$(SDK_PATH)/cedarx/lib/ 
+
+CEDAR_MACORS = -D_GNU_SOURCE -DCONFIG_CHIP=7 -DCONFIG_TARGET_PRODUCT= -DCONFIG_PRODUCT=2 \
+				-DCONFIG_VE_IPC=1 -DROTATE_PIC_HW=0 -DVE_PHY_OFFSET=0x40000000 -DCONFIG_LOG_LEVEL=0 
+
+LIBS += -lsdk_memory -lcdx_ion -lsdk_disp
+
+all: $(Target)
+
+$(Target): MemTestDE.cpp
+	$(CPP) MemTestDE.cpp -o $(Target) $(INC) $(LIBS) $(LDFLAGS) 
+	@echo "generate encoder success!!!"
+	@cp -f $(Target) $(INSTATLL_PATH)
+	@echo -e '\e[1;33m cp -f $(Target) $(INSTATLL_PATH) \e[0m'
+
+	
+.PHONY:clean cleanall
+
+clean: 
+	@rm -f $(Target) memTest
+	
+install:
+	-cp $(Target) $(INSTATLL_PATH)	

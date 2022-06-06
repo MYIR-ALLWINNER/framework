@@ -1,0 +1,31 @@
+From a85923c1f306cf6fad74861d0e69218e81c568ae Mon Sep 17 00:00:00 2001
+From: xfang <xufang@allwinnertech.com>
+Date: Wed, 6 May 2020 11:55:21 +0800
+Subject: [PATCH 4/5] ionAlloc.c:check g_alloc_context at the beginning
+
+---
+ libcedarc/memory/ionMemory/ionAlloc.c | 7 ++++++-
+ 1 file changed, 6 insertions(+), 1 deletion(-)
+
+diff --git a/libcedarc/memory/ionMemory/ionAlloc.c b/libcedarc/memory/ionMemory/ionAlloc.c
+index 561722b..e6efcc7
+--- a/libcedarc/memory/ionMemory/ionAlloc.c
++++ b/libcedarc/memory/ionMemory/ionAlloc.c
+@@ -230,8 +230,13 @@ void ion_alloc_close()
+     struct aw_mem_list_head * pos, *q;
+ 
+     logv("ion_alloc_close \n");
+-
++	if(!g_alloc_context){
++		printf("error: cdc memory open and close dismatch!\n");
++		return ;
++	}
++	
+     pthread_mutex_lock(&g_mutex_alloc);
++
+     if (--g_alloc_context->ref_cnt <= 0)
+     {
+         logv("pid: %d, release g_alloc_context = %p \n", getpid(), g_alloc_context);
+-- 
+1.9.1
+

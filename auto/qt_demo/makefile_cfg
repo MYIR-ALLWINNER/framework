@@ -1,0 +1,41 @@
+PWD=$(shell pwd)
+
+SDK_PATH=../../sdk_lib
+
+SDK_LIBS = $(SDK_PATH)/lib64
+
+ifeq ("$(MISC_BOARD)","a40i-p3")
+DEFINES+=-D_A40I_P3_
+else ifeq ("$(MISC_BOARD)","t3-p3")
+DEFINES+=-D_T3_P3_
+else ifeq ("$(MISC_BOARD)","t7-p1")
+DEFINES+=-D_T7_P1_
+else
+DEFINES+=-D_SUNXIW17_
+endif
+$(shell mkdir -p $(SDK_LIBS))
+
+#LICHEE_BR_OUT=/home/yuanguochao/t564/longan/out/t507/demo2.0/longan/buildroot
+#GCC=$LICHEE_BR_OUT/host/bin/aarch64-linux-gnu-gcc
+#OUT_GCC = `find ${LICHEE_BR_OUT} -perm /a+x -a -regex '.*-gcc'`
+#OUT_CPP = `find ${LICHEE_BR_OUT} -perm /a+x -a -regex '.*-g\+\+'`
+#OUT_STRIP = `find ${LICHEE_BR_OUT} -perm /a+x -a -regex '.*-strip'`
+SYSROOT = $(LICHEE_BR_OUT)/host/usr/aarch64-buildroot-linux-gnu/sysroot
+
+CC = $(LICHEE_BR_OUT)/host/bin/aarch64-linux-gnu-gcc 
+CPP = $(LICHEE_BR_OUT)/host/bin/aarch64-linux-gnu-g++ 
+STRIP = $(LICHEE_BR_OUT)/host/bin/aarch64-linux-gnu-strip
+#export PATH = $(LICHEE_BR_OUT)/host/bin/:$(PATH)
+
+INSTATLL_PATH = $(PWD)/../bin
+
+
+ANDROID_UTILS_DEF = -DHAVE_PTHREADS -DHAVE_SYS_UIO_H -DANDROID_SMP=1 -D__ARM_HAVE_DMB -D__ARM_HAVE_LDREX_STREX  -DHAVE_POSIX_CLOCKS -DHAVE_PRCTL
+SDKLIB_DEF = -DWATERMARK -DCDX_V27  -DSUPPORT_NEW_DRIVER
+DEFINES +=  $(ANDROID_UTILS_DEF) $(SDKLIB_DEF)
+			
+#GPU 导入摄像头纹理显示测�?
+#DEFINES +=-DDMAFD_TEST
+
+CEDAR_MACORS = -D_GNU_SOURCE -DCONFIG_CHIP=7 -DCONFIG_TARGET_PRODUCT= -DCONFIG_PRODUCT=2 \
+				-DCONFIG_VE_IPC=1 -DROTATE_PIC_HW=0 -DVE_PHY_OFFSET=0x40000000 -DCONFIG_LOG_LEVEL=0 

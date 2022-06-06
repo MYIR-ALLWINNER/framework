@@ -1,0 +1,25 @@
+From 7364e82f26d8cd5f9113047f41873409eb561c78 Mon Sep 17 00:00:00 2001
+From: xfang <xufang@allwinnertech.com>
+Date: Wed, 6 May 2020 14:30:48 +0800
+Subject: [PATCH] change compile order in Makefile.am
+
+---
+ libcedarc/Makefile.am | 4 ++--
+ 1 file changed, 2 insertions(+), 2 deletions(-)
+
+diff --git a/libcedarc/Makefile.am b/libcedarc/Makefile.am
+index ea1412d..4823215 100755
+--- a/libcedarc/Makefile.am
++++ b/libcedarc/Makefile.am
+@@ -1,4 +1,4 @@
+ 
+-SUBDIRS = base memory vdecoder openmax\
++SUBDIRS = base memory vdecoder \
+           vencoder/base \
+-          vencoder
+\ No newline at end of file
++          vencoder openmax
+\ No newline at end of file
+-- 
+1.9.1
+

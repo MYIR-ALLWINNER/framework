@@ -1,0 +1,25 @@
+From 12f256ea48ab83be9341f179a76d7fcb57e9e94e Mon Sep 17 00:00:00 2001
+From: xfang <xufang@allwinnertech.com>
+Date: Wed, 6 May 2020 11:49:36 +0800
+Subject: [PATCH 2/5] dont call EncAdpaterRelease in VideoEncDestroy
+
+---
+ libcedarc/vencoder/vencoder.c | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+diff --git a/libcedarc/vencoder/vencoder.c b/libcedarc/vencoder/vencoder.c
+index 33f8338..73fb69f
+--- a/libcedarc/vencoder/vencoder.c
++++ b/libcedarc/vencoder/vencoder.c
+@@ -211,7 +211,7 @@ void VideoEncDestroy(VideoEncoder* pEncoder)
+         venc_ctx->pEncoderHandle = NULL;
+     }
+ 
+-    EncAdpaterRelease(venc_ctx->memops);
++    //EncAdpaterRelease(venc_ctx->memops);
+ 
+     if(venc_ctx->veOpsS)
+     {
+-- 
+1.9.1
+

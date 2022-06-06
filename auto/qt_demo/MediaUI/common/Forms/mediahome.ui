@@ -1,0 +1,192 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>MediaHome</class>
+ <widget class="QWidget" name="MediaHome">
+  <property name="enabled">
+   <bool>true</bool>
+  </property>
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>1024</width>
+    <height>600</height>
+   </rect>
+  </property>
+  <property name="minimumSize">
+   <size>
+    <width>1024</width>
+    <height>600</height>
+   </size>
+  </property>
+  <property name="maximumSize">
+   <size>
+    <width>1024</width>
+    <height>600</height>
+   </size>
+  </property>
+  <property name="windowTitle">
+   <string>Form</string>
+  </property>
+  <property name="styleSheet">
+   <string notr="true">background-color: rgb(87, 65, 115);</string>
+  </property>
+  <widget class="QWidget" name="widget" native="true">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>0</y>
+     <width>1024</width>
+     <height>70</height>
+    </rect>
+   </property>
+   <property name="maximumSize">
+    <size>
+     <width>1024</width>
+     <height>70</height>
+    </size>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">background-color: qlineargradient(spread:pad, x1:0, y1:0, x2:0, y2:1, stop:0 rgb(79, 38, 126), stop:1 rgb(111, 73, 127));</string>
+   </property>
+   <widget class="QLabel" name="label">
+    <property name="geometry">
+     <rect>
+      <x>0</x>
+      <y>0</y>
+      <width>1024</width>
+      <height>70</height>
+     </rect>
+    </property>
+    <property name="maximumSize">
+     <size>
+      <width>1024</width>
+      <height>70</height>
+     </size>
+    </property>
+    <property name="font">
+     <font>
+      <family>微软雅黑</family>
+      <pointsize>22</pointsize>
+      <weight>75</weight>
+      <bold>true</bold>
+     </font>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">color:white;</string>
+    </property>
+    <property name="text">
+     <string>媒体</string>
+    </property>
+    <property name="alignment">
+     <set>Qt::AlignCenter</set>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="return_btn">
+    <property name="geometry">
+     <rect>
+      <x>940</x>
+      <y>0</y>
+      <width>78</width>
+      <height>70</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">QPushButton{
+background-color: rgba(255, 255, 255， 0);
+border-image: url(:/images/playerIcons/return_d.gif);
+}
+QPushButton:pressed{
+	border-image: url(:/images/playerIcons/return_u.gif);
+}
+QPushButton:hover{
+
+
+}
+QPushButton:released{
+	border-image: url(:/images/playerIcons/return_d.gif);
+}</string>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+   </widget>
+  </widget>
+  <widget class="QPushButton" name="music_btn">
+   <property name="geometry">
+    <rect>
+     <x>529</x>
+     <y>186</y>
+     <width>290</width>
+     <height>290</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">QPushButton{
+background-color: rgba(255, 255, 255， 0);
+border-image: url(:/images/playerIcons/music_d.gif);
+}
+QPushButton:pressed{
+	border-image: url(:/images/playerIcons/music_u.gif);
+}
+QPushButton:hover{
+
+}
+QPushButton:released{
+	border-image: url(:/images/playerIcons/music_d.gif);
+}</string>
+   </property>
+   <property name="text">
+    <string/>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="video_btn">
+   <property name="geometry">
+    <rect>
+     <x>150</x>
+     <y>186</y>
+     <width>290</width>
+     <height>290</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">QPushButton{
+background-color: rgba(255, 255, 255， 0);
+border-image: url(:/images/playerIcons/video_d.gif);
+}
+QPushButton:pressed{
+	border-image: url(:/images/playerIcons/video_u.gif);
+}
+QPushButton:hover{
+
+
+}
+QPushButton:released{
+	border-image: url(:/images/playerIcons/video_d.gif);
+}</string>
+   </property>
+   <property name="text">
+    <string/>
+   </property>
+  </widget>
+  <widget class="QLabel" name="label_2">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>70</y>
+     <width>1024</width>
+     <height>530</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string/>
+   </property>
+  </widget>
+  <zorder>widget</zorder>
+  <zorder>label_2</zorder>
+  <zorder>music_btn</zorder>
+  <zorder>video_btn</zorder>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>

@@ -1,0 +1,4 @@
+使用说明：
+编译这里的应用有两种方法：
+1.执行本目录下的build.sh或者rebuildAll.sh，它们会逐一进入各个demo目录然后编译对应的demo,不一样的是rebuildAll.sh会在编译前执行make distclean
+2.进入单个demo目录，然后手动执行以make开头的一个文件，比如说CameraUI里的makeCameraUI

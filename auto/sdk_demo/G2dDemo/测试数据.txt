@@ -1,0 +1,80 @@
+T5不支持格式转换和缩放！！！
+T5最大支持2k大小的操作！！！
+
+
+测试方法：请到testbin目录找里面的.bat,双击执行即可
+
+
+翻转测试     1026x600 rgba
+#adb shell G2dDemo 8
+arc=2  testid=8
+****alloc_buffer->phy = 0xfe800000,alloc_buffer->vir = 0x7f860e8000
+fopen /tmp/1024x600.rgba OK
+alloc m_DispMemOps0.ion_buffer.fd_data.aw_fd=5
+WritePicFileContent size=2457600
+fopen /tmp/ck.yuv OK
+****alloc_buffer->phy = 0xfe400000,alloc_buffer->vir = 0x7f85e90000
+alloc m_DispMemOps.ion_buffer.fd_data.aw_fd=6
+start g2dflip:RGBA v flip
+RGBA v flip use time =2914000  
+WritePicFileContent size=2457600
+fopen /tmp/outPic.rgba OK
+
+
+旋转测试   90度   720p NV21
+#G2dDemo 5
+arc=2  testid=5
+****alloc_buffer->phy = 0xfe200000,alloc_buffer->vir = 0x7f9f0f3000
+fopen /tmp/video0.yuv OK
+alloc m_DispMemOps0.ion_buffer.fd_data.aw_fd=5
+WritePicFileContent size=1382400
+fopen /tmp/ck.yuv OK
+****alloc_buffer->phy = 0xfe000000,alloc_buffer->vir = 0x7f9efa1000
+alloc m_DispMemOps.ion_buffer.fd_data.aw_fd=6
+start g2dClipByFd rotate
+g2dClipByFd rotate use time =1831000
+WritePicFileContent size=1382400
+fopen /tmp/out.yuv OK
+要注意的是如果是旋转90，输出的长宽就不是1280x720，而是720*1280
+
+
+拆图测试   把2560x1440  ---> 4个720p   NV21
+arc=2  testid=2
+****alloc_buffer->phy = 0xfd800000,alloc_buffer->vir = 0x7fa4f20000
+fopen /tmp/dcvideo.yuv OK
+****alloc_buffer->phy = 0xfd600000,alloc_buffer->vir = 0x7fa4dce000
+****alloc_buffer->phy = 0xfd400000,alloc_buffer->vir = 0x7fa4c7c000
+****alloc_buffer->phy = 0xfd200000,alloc_buffer->vir = 0x7fa4b2a000
+****alloc_buffer->phy = 0xfd000000,alloc_buffer->vir = 0x7fa49d8000
+start trans 1x 2560x1440  to 4x 1280x720 to decompose
+end trans 1x 2560x1440  to 4x 1280x720   time =7070000
+WritePicFileContent size=1382400
+fopen /tmp/dvideo0.yuv OK
+WritePicFileContent size=1382400
+fopen /tmp/dvideo1.yuv OK
+WritePicFileContent size=1382400
+fopen /tmp/dvideo2.yuv OK
+WritePicFileContent size=1382400
+fopen /tmp/dvideo3.yuv OK
+ion_alloc_free failed, do not find virtual address: 0x7fa4b2a000
+
+
+
+合成测试   4x720p  ---> 2560x1440   NV21
+G2dDemo 3
+arc=2  testid=3
+****alloc_buffer->phy = 0xfdc00000,alloc_buffer->vir = 0x7faa545000
+fopen /tmp/video0.yuv OK
+****alloc_buffer->phy = 0xfda00000,alloc_buffer->vir = 0x7faa3f3000
+fopen /tmp/video1.yuv OK
+****alloc_buffer->phy = 0xfd800000,alloc_buffer->vir = 0x7faa2a1000
+fopen /tmp/video2.yuv OK
+****alloc_buffer->phy = 0xfd600000,alloc_buffer->vir = 0x7faa14f000
+fopen /tmp/video3.yuv OK
+WritePicFileContent size=1382400
+fopen /tmp/ck.yuv OK
+****alloc_buffer->phy = 0xfd000000,alloc_buffer->vir = 0x7fa9c09000
+start trans 4x 720p to 1x 2560x1440 compose
+end trans 4x 720p to 1x 2560x1440 compose time =7596000
+WritePicFileContent size=5529600
+fopen /tmp/cvideo.yuv OK

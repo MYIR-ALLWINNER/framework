@@ -1,0 +1,11 @@
+prefix=/home/linux01/t5_longan/longan/platform/framework/sdk_lib/cedarx
+exec_prefix=${prefix}
+libdir=${exec_prefix}/lib
+includedir=${prefix}/include
+
+Name: alsa
+Description: Small Advanced Linux Sound Architecture (SALSA) - Library
+Version: 1.0.28
+Requires: 
+Libs: -L${libdir} -lsalsa
+Cflags: -I${includedir}

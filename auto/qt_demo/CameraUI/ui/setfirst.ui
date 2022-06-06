@@ -1,0 +1,967 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>SetFirst</class>
+ <widget class="QDialog" name="SetFirst">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>800</width>
+    <height>480</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>Dialog</string>
+  </property>
+  <property name="styleSheet">
+   <string notr="true">background-color:rgb(104, 98, 98,90);
+border-radius:15px;
+</string>
+  </property>
+  <layout class="QGridLayout" name="gridLayout_10" columnstretch="1,7,5">
+   <item row="0" column="0" rowspan="3">
+    <widget class="QWidget" name="widget_4" native="true">
+     <property name="styleSheet">
+      <string notr="true">background-color:rgb(86, 76, 75,90);
+border-radius:10px;</string>
+     </property>
+     <layout class="QGridLayout" name="gridLayout">
+      <item row="0" column="0">
+       <layout class="QHBoxLayout" name="horizontalLayout_4" stretch="2">
+        <item>
+         <layout class="QVBoxLayout" name="verticalLayout" stretch="1,0,3,2,1">
+          <property name="spacing">
+           <number>0</number>
+          </property>
+          <item>
+           <spacer name="verticalSpacer_2">
+            <property name="orientation">
+             <enum>Qt::Vertical</enum>
+            </property>
+            <property name="sizeHint" stdset="0">
+             <size>
+              <width>20</width>
+              <height>18</height>
+             </size>
+            </property>
+           </spacer>
+          </item>
+          <item>
+           <widget class="QPushButton" name="settingsButton">
+            <property name="minimumSize">
+             <size>
+              <width>41</width>
+              <height>41</height>
+             </size>
+            </property>
+            <property name="maximumSize">
+             <size>
+              <width>41</width>
+              <height>41</height>
+             </size>
+            </property>
+            <property name="focusPolicy">
+             <enum>Qt::NoFocus</enum>
+            </property>
+            <property name="styleSheet">
+             <string notr="true">border-image:url(:/icon/settings.png);
+background-color:rgb(255,255,255,0);</string>
+            </property>
+            <property name="text">
+             <string/>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <spacer name="verticalSpacer">
+            <property name="orientation">
+             <enum>Qt::Vertical</enum>
+            </property>
+            <property name="sizeHint" stdset="0">
+             <size>
+              <width>20</width>
+              <height>268</height>
+             </size>
+            </property>
+           </spacer>
+          </item>
+          <item>
+           <widget class="QPushButton" name="returnButton">
+            <property name="minimumSize">
+             <size>
+              <width>41</width>
+              <height>41</height>
+             </size>
+            </property>
+            <property name="maximumSize">
+             <size>
+              <width>41</width>
+              <height>41</height>
+             </size>
+            </property>
+            <property name="focusPolicy">
+             <enum>Qt::NoFocus</enum>
+            </property>
+            <property name="styleSheet">
+             <string notr="true">border-image:url(:/icon/Back.png);
+background-color:rgb(255,255,255,0);s</string>
+            </property>
+            <property name="text">
+             <string/>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <spacer name="verticalSpacer_3">
+            <property name="orientation">
+             <enum>Qt::Vertical</enum>
+            </property>
+            <property name="sizeHint" stdset="0">
+             <size>
+              <width>20</width>
+              <height>18</height>
+             </size>
+            </property>
+           </spacer>
+          </item>
+         </layout>
+        </item>
+       </layout>
+      </item>
+     </layout>
+    </widget>
+   </item>
+   <item row="0" column="1" rowspan="3">
+    <widget class="QWidget" name="widget" native="true">
+     <property name="styleSheet">
+      <string notr="true">background-color:rgb(86, 76, 75,80);
+border-radius:10px;</string>
+     </property>
+     <layout class="QGridLayout" name="gridLayout_2">
+      <item row="1" column="0">
+       <widget class="QPushButton" name="ADASButton">
+        <property name="minimumSize">
+         <size>
+          <width>0</width>
+          <height>0</height>
+         </size>
+        </property>
+        <property name="maximumSize">
+         <size>
+          <width>16000</width>
+          <height>16000</height>
+         </size>
+        </property>
+        <property name="focusPolicy">
+         <enum>Qt::NoFocus</enum>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">background-color:#38a4d6;
+font: 12pt &quot;宋体&quot;;
+border-radius:5px;
+  color:rgb(255,255,255);</string>
+        </property>
+        <property name="text">
+         <string>ADAS</string>
+        </property>
+       </widget>
+      </item>
+      <item row="0" column="1">
+       <widget class="QPushButton" name="audioButton">
+        <property name="minimumSize">
+         <size>
+          <width>0</width>
+          <height>0</height>
+         </size>
+        </property>
+        <property name="maximumSize">
+         <size>
+          <width>16000</width>
+          <height>16000</height>
+         </size>
+        </property>
+        <property name="focusPolicy">
+         <enum>Qt::NoFocus</enum>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">background-color:#38a4d6;
+font: 75 12pt &quot;Aharoni&quot;;
+border-radius:5px;
+  color:rgb(255,255,255);</string>
+        </property>
+        <property name="text">
+         <string>录音</string>
+        </property>
+       </widget>
+      </item>
+      <item row="0" column="0">
+       <widget class="QPushButton" name="movieButton">
+        <property name="sizePolicy">
+         <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+          <horstretch>0</horstretch>
+          <verstretch>0</verstretch>
+         </sizepolicy>
+        </property>
+        <property name="minimumSize">
+         <size>
+          <width>0</width>
+          <height>0</height>
+         </size>
+        </property>
+        <property name="maximumSize">
+         <size>
+          <width>160000</width>
+          <height>160000</height>
+         </size>
+        </property>
+        <property name="focusPolicy">
+         <enum>Qt::NoFocus</enum>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">background-color:#38a4d6;
+font: 12pt &quot;宋体&quot;;
+border-radius:5px;
+color:rgb(255,255,255);
+</string>
+        </property>
+        <property name="text">
+         <string>开机录像</string>
+        </property>
+       </widget>
+      </item>
+      <item row="1" column="1">
+       <widget class="QPushButton" name="reverseButton">
+        <property name="minimumSize">
+         <size>
+          <width>0</width>
+          <height>0</height>
+         </size>
+        </property>
+        <property name="maximumSize">
+         <size>
+          <width>16000</width>
+          <height>16000</height>
+         </size>
+        </property>
+        <property name="focusPolicy">
+         <enum>Qt::NoFocus</enum>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">background-color:#38a4d6;
+font: 75 12pt &quot;Aharoni&quot;;
+border-radius:5px;
+  color:rgb(255,255,255);</string>
+        </property>
+        <property name="text">
+         <string>倒车线</string>
+        </property>
+       </widget>
+      </item>
+     </layout>
+    </widget>
+   </item>
+   <item row="0" column="2">
+    <widget class="QWidget" name="widget_2" native="true">
+     <property name="styleSheet">
+      <string notr="true">background-color:rgb(81,78,72,80);
+border-radius:10px;
+</string>
+     </property>
+     <layout class="QGridLayout" name="gridLayout_3">
+      <item row="1" column="0">
+       <layout class="QVBoxLayout" name="verticalLayout_2">
+        <property name="leftMargin">
+         <number>10</number>
+        </property>
+        <item>
+         <widget class="QLabel" name="label">
+          <property name="minimumSize">
+           <size>
+            <width>0</width>
+            <height>0</height>
+           </size>
+          </property>
+          <property name="maximumSize">
+           <size>
+            <width>151</width>
+            <height>31</height>
+           </size>
+          </property>
+          <property name="styleSheet">
+           <string notr="true">color:#ffffff;
+font: 75 11pt &quot;Aharoni&quot;;</string>
+          </property>
+          <property name="text">
+           <string>录像时间设置</string>
+          </property>
+          <property name="alignment">
+           <set>Qt::AlignCenter</set>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QSpinBox" name="movieTimeSetting">
+          <property name="minimumSize">
+           <size>
+            <width>0</width>
+            <height>0</height>
+           </size>
+          </property>
+          <property name="maximumSize">
+           <size>
+            <width>141</width>
+            <height>41</height>
+           </size>
+          </property>
+          <property name="styleSheet">
+           <string notr="true">QSpinBox::up-button {subcontrol-origin:border;subcontrol-position:right;image: url(:/icon/right_arrow.png);width: 17px;height: 32px;}
+QSpinBox::down-button:pressed{subcontrol-position:left;image: url(:/icon/left_arrow.png);width: 17px;height: 32px;}
+QSpinBox::down-button {subcontrol-origin:border;subcontrol-position:left;border-image: url(:/icon/left_arrow.png);width: 17px;height: 32px;}
+QSpinBox::down-button:enabled:hover {background: rgb(255, 255, 255, 30);}
+QSpinBox::up-button:enabled:hover {background: rgb(255, 255, 255, 30);}
+QSpinBox::up-button:pressed{subcontrol-origin:border;subcontrol-position:right;image: url(:/icon/right_arrow.png); width: 17px;height: 32px;}
+
+QSpinBox{border: 1px solid rgb(100, 100, 100);text-align: center; border-radius: 4px;color:rgb(255,255,255);}
+  
+</string>
+          </property>
+          <property name="alignment">
+           <set>Qt::AlignCenter</set>
+          </property>
+         </widget>
+        </item>
+       </layout>
+      </item>
+      <item row="1" column="1">
+       <layout class="QVBoxLayout" name="verticalLayout_3">
+        <property name="leftMargin">
+         <number>10</number>
+        </property>
+        <item>
+         <widget class="QLabel" name="label_2">
+          <property name="minimumSize">
+           <size>
+            <width>0</width>
+            <height>0</height>
+           </size>
+          </property>
+          <property name="maximumSize">
+           <size>
+            <width>141</width>
+            <height>31</height>
+           </size>
+          </property>
+          <property name="styleSheet">
+           <string notr="true">font: 75 11pt &quot;Aharoni&quot;;
+color:#ffffff;
+
+</string>
+          </property>
+          <property name="text">
+           <string>分辨率设置</string>
+          </property>
+          <property name="alignment">
+           <set>Qt::AlignCenter</set>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QComboBox" name="comboBox">
+          <property name="minimumSize">
+           <size>
+            <width>0</width>
+            <height>0</height>
+           </size>
+          </property>
+          <property name="maximumSize">
+           <size>
+            <width>151</width>
+            <height>41</height>
+           </size>
+          </property>
+          <property name="styleSheet">
+           <string notr="true">QComboBox::drop-down {
+	subcontrol-origin: padding;
+	subcontrol-position: top right;
+	width: 15px; 
+	border-left-width: 1px;
+	border-left-style: solid;
+	border-top-right-radius: 3px;
+	border-bottom-right-radius: 3px;
+	border-left-color: #50A3F0;
+}
+
+QComboBox::down-arrow {
+	border-image: url(:/icon/arrowdown.png); 
+}
+QComboBox{border: 1px solid rgb(100, 100, 100);text-align: center;text-color:rgb(255,255,255); border-radius: 4px; color:rgb(255,255,255);}
+
+ </string>
+          </property>
+          <item>
+           <property name="text">
+            <string>1920×1080</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>1280×720</string>
+           </property>
+          </item>
+         </widget>
+        </item>
+       </layout>
+      </item>
+     </layout>
+    </widget>
+   </item>
+   <item row="2" column="2">
+    <widget class="QWidget" name="widget_3" native="true">
+     <property name="styleSheet">
+      <string notr="true">background-color:rgb(81,78,72,80);
+border-radius:10px;</string>
+     </property>
+     <layout class="QGridLayout" name="gridLayout_9">
+      <item row="0" column="0">
+       <widget class="QWidget" name="widget_5" native="true">
+        <layout class="QGridLayout" name="gridLayout_4" columnstretch="1,4,1">
+         <item row="0" column="0">
+          <widget class="QPushButton" name="voiceButton">
+           <property name="enabled">
+            <bool>true</bool>
+           </property>
+           <property name="minimumSize">
+            <size>
+             <width>31</width>
+             <height>31</height>
+            </size>
+           </property>
+           <property name="maximumSize">
+            <size>
+             <width>31</width>
+             <height>31</height>
+            </size>
+           </property>
+           <property name="focusPolicy">
+            <enum>Qt::NoFocus</enum>
+           </property>
+           <property name="styleSheet">
+            <string notr="true">border-image:url(:/icon/sound.png);
+
+background-color:rgb(255,255,255,0);
+
+</string>
+           </property>
+           <property name="text">
+            <string/>
+           </property>
+          </widget>
+         </item>
+         <item row="0" column="1">
+          <widget class="QSlider" name="voiceSlider">
+           <property name="focusPolicy">
+            <enum>Qt::NoFocus</enum>
+           </property>
+           <property name="styleSheet">
+            <string notr="true">QSlider::groove:horizontal { 
+	background: #cbcbcb; 
+	height: 6px; 
+	border-radius: 1px; 
+	padding-left:-1px;
+	padding-right:-1px;
+	padding-top:-1px;
+	padding-bottom:-1px;
+}
+
+QSlider::add-page:horizontal {
+	background: #cbcbcb;
+	border-radius: 2px;
+}
+QSlider::sub-page:horizontal
+{
+	background: qlineargradient(x1:0, y1:0, x2:0,y2:1,stop:0 #439cf4, stop:1 #439cf4);
+ 	background: qlineargradient(x1: 0, y1: 0.2, x2: 1, y2: 1,stop: 0 #439cf4, stop: 1 #439cf4);
+    width: 10px;
+	border-radius: 2px;
+}
+QSlider::handle:horizontal {
+	width: 13px; 
+	margin-top: -3px; 
+	margin-bottom: -3px; 
+	border-radius: 6px;
+	background: qradialgradient(spread:pad, cx:0.5, cy:0.5, radius:0.5, fx:0.5, fy:0.5,stop:0.6 #F0F0F0, stop:0.778409 #50A3F0);
+}
+QSlider{
+background-color:rgb(255,255,255,0);
+}
+</string>
+           </property>
+           <property name="orientation">
+            <enum>Qt::Horizontal</enum>
+           </property>
+          </widget>
+         </item>
+         <item row="0" column="2">
+          <widget class="QLabel" name="voiceLabel">
+           <property name="minimumSize">
+            <size>
+             <width>0</width>
+             <height>0</height>
+            </size>
+           </property>
+           <property name="maximumSize">
+            <size>
+             <width>31</width>
+             <height>31</height>
+            </size>
+           </property>
+           <property name="styleSheet">
+            <string notr="true">  color:rgb(255,255,255);
+background-color:rgb(255,255,255,0);</string>
+           </property>
+           <property name="text">
+            <string/>
+           </property>
+           <property name="alignment">
+            <set>Qt::AlignCenter</set>
+           </property>
+          </widget>
+         </item>
+        </layout>
+       </widget>
+      </item>
+      <item row="1" column="0">
+       <widget class="QWidget" name="widget_6" native="true">
+        <layout class="QGridLayout" name="gridLayout_5" columnstretch="1,4,1">
+         <item row="0" column="0">
+          <widget class="QPushButton" name="lightButton">
+           <property name="enabled">
+            <bool>false</bool>
+           </property>
+           <property name="minimumSize">
+            <size>
+             <width>31</width>
+             <height>31</height>
+            </size>
+           </property>
+           <property name="maximumSize">
+            <size>
+             <width>31</width>
+             <height>31</height>
+            </size>
+           </property>
+           <property name="styleSheet">
+            <string notr="true">border-image:url(:/icon/brightness.png);
+background-color:rgb(255,255,255,0);</string>
+           </property>
+           <property name="text">
+            <string/>
+           </property>
+          </widget>
+         </item>
+         <item row="0" column="2">
+          <widget class="QLabel" name="lightLabel">
+           <property name="minimumSize">
+            <size>
+             <width>0</width>
+             <height>0</height>
+            </size>
+           </property>
+           <property name="maximumSize">
+            <size>
+             <width>31</width>
+             <height>31</height>
+            </size>
+           </property>
+           <property name="styleSheet">
+            <string notr="true">  color:rgb(255,255,255);
+background-color:rgb(255,255,255,0);</string>
+           </property>
+           <property name="text">
+            <string/>
+           </property>
+           <property name="alignment">
+            <set>Qt::AlignCenter</set>
+           </property>
+          </widget>
+         </item>
+         <item row="0" column="1">
+          <widget class="QSlider" name="lightSlider">
+           <property name="focusPolicy">
+            <enum>Qt::NoFocus</enum>
+           </property>
+           <property name="styleSheet">
+            <string notr="true">QSlider::groove:horizontal { 
+	background: #cbcbcb; 
+	height: 6px; 
+	border-radius: 1px; 
+	padding-left:-1px;
+	padding-right:-1px;
+	padding-top:-1px;
+	padding-bottom:-1px;
+}
+
+QSlider::add-page:horizontal {
+	background: #cbcbcb;
+	border-radius: 2px;
+}
+QSlider::sub-page:horizontal
+{
+	background: qlineargradient(x1:0, y1:0, x2:0,y2:1,stop:0 #439cf4, stop:1 #439cf4);
+ 	background: qlineargradient(x1: 0, y1: 0.2, x2: 1, y2: 1,stop: 0 #439cf4, stop: 1 #439cf4);
+    width: 10px;
+	border-radius: 2px;
+}
+QSlider::handle:horizontal {
+	width: 13px; 
+	margin-top: -3px; 
+	margin-bottom: -3px; 
+	border-radius: 6px;
+	background: qradialgradient(spread:pad, cx:0.5, cy:0.5, radius:0.5, fx:0.5, fy:0.5,stop:0.6 #F0F0F0, stop:0.778409 #50A3F0);
+}
+
+QSlider{
+background-color:rgb(255,255,255,0);
+}
+</string>
+           </property>
+           <property name="orientation">
+            <enum>Qt::Horizontal</enum>
+           </property>
+          </widget>
+         </item>
+        </layout>
+       </widget>
+      </item>
+      <item row="2" column="0">
+       <widget class="QWidget" name="widget_7" native="true">
+        <layout class="QGridLayout" name="gridLayout_6" columnstretch="1,4,1">
+         <item row="0" column="0">
+          <widget class="QPushButton" name="ColorEffectButton">
+           <property name="enabled">
+            <bool>false</bool>
+           </property>
+           <property name="minimumSize">
+            <size>
+             <width>31</width>
+             <height>31</height>
+            </size>
+           </property>
+           <property name="maximumSize">
+            <size>
+             <width>31</width>
+             <height>31</height>
+            </size>
+           </property>
+           <property name="styleSheet">
+            <string notr="true">border-image:url(:/icon/contrast.png);
+background-color:rgb(255,255,255,0);</string>
+           </property>
+           <property name="text">
+            <string/>
+           </property>
+          </widget>
+         </item>
+         <item row="0" column="1">
+          <widget class="QSlider" name="ColorEffectSlider">
+           <property name="focusPolicy">
+            <enum>Qt::NoFocus</enum>
+           </property>
+           <property name="styleSheet">
+            <string notr="true">QSlider::groove:horizontal { 
+	background: rgb(255,255,255,0); 
+	height: 6px; 
+	border-radius: 1px; 
+	padding-left:-1px;
+	padding-right:-1px;
+	padding-top:-1px;
+	padding-bottom:-1px;
+}
+
+QSlider::add-page:horizontal {
+	background: #cbcbcb;
+	border-radius: 2px;
+}
+QSlider::sub-page:horizontal
+{
+	background: qlineargradient(x1:0, y1:0, x2:0,y2:1,stop:0 #439cf4, stop:1 #439cf4);
+ 	background: qlineargradient(x1: 0, y1: 0.2, x2: 1, y2: 1,stop: 0 #439cf4, stop: 1 #439cf4);
+    width: 10px;
+	border-radius: 2px;
+}
+QSlider::handle:horizontal {
+	width: 13px; 
+	margin-top: -3px; 
+	margin-bottom: -3px; 
+	border-radius: 6px;
+	background: qradialgradient(spread:pad, cx:0.5, cy:0.5, radius:0.5, fx:0.5, fy:0.5,stop:0.6 #F0F0F0, stop:0.778409 #50A3F0);
+}
+QSlider{
+background-color:rgb(255,255,255,0);
+}
+
+</string>
+           </property>
+           <property name="orientation">
+            <enum>Qt::Horizontal</enum>
+           </property>
+          </widget>
+         </item>
+         <item row="0" column="2">
+          <widget class="QLabel" name="ColorEffectLabel">
+           <property name="minimumSize">
+            <size>
+             <width>0</width>
+             <height>0</height>
+            </size>
+           </property>
+           <property name="maximumSize">
+            <size>
+             <width>31</width>
+             <height>31</height>
+            </size>
+           </property>
+           <property name="styleSheet">
+            <string notr="true">  color:rgb(255,255,255);
+background-color:rgb(255,255,255,0);</string>
+           </property>
+           <property name="text">
+            <string/>
+           </property>
+           <property name="alignment">
+            <set>Qt::AlignCenter</set>
+           </property>
+          </widget>
+         </item>
+        </layout>
+       </widget>
+      </item>
+      <item row="3" column="0">
+       <widget class="QWidget" name="widget_8" native="true">
+        <layout class="QGridLayout" name="gridLayout_7" columnstretch="1,4,1" columnminimumwidth="0,0,0">
+         <item row="0" column="0">
+          <widget class="QPushButton" name="ExposureCompensationButton">
+           <property name="enabled">
+            <bool>false</bool>
+           </property>
+           <property name="minimumSize">
+            <size>
+             <width>31</width>
+             <height>31</height>
+            </size>
+           </property>
+           <property name="maximumSize">
+            <size>
+             <width>31</width>
+             <height>31</height>
+            </size>
+           </property>
+           <property name="styleSheet">
+            <string notr="true">image: url(:/icon/ExposureCompensation.png);
+background-color:rgb(255,255,255,0);</string>
+           </property>
+           <property name="text">
+            <string/>
+           </property>
+          </widget>
+         </item>
+         <item row="0" column="1">
+          <widget class="QSlider" name="ExposureCompensationSlider">
+           <property name="focusPolicy">
+            <enum>Qt::NoFocus</enum>
+           </property>
+           <property name="styleSheet">
+            <string notr="true">QSlider::groove:horizontal { 
+	background: #cbcbcb; 
+	height: 6px; 
+	border-radius: 1px; 
+	padding-left:-1px;
+	padding-right:-1px;
+	padding-top:-1px;
+	padding-bottom:-1px;
+}
+
+QSlider::add-page:horizontal {
+	background: #cbcbcb;
+	border-radius: 2px;
+}
+QSlider::sub-page:horizontal
+{
+	background: qlineargradient(x1:0, y1:0, x2:0,y2:1,stop:0 #439cf4, stop:1 #439cf4);
+ 	background: qlineargradient(x1: 0, y1: 0.2, x2: 1, y2: 1,stop: 0 #439cf4, stop: 1 #439cf4);
+    width: 10px;
+	border-radius: 2px;
+}
+QSlider::handle:horizontal {
+	width: 13px; 
+	margin-top: -3px; 
+	margin-bottom: -3px; 
+	border-radius: 6px;
+	background: qradialgradient(spread:pad, cx:0.5, cy:0.5, radius:0.5, fx:0.5, fy:0.5,stop:0.6 #F0F0F0, stop:0.778409 #50A3F0);
+}
+
+QSlider{
+background-color:rgb(255,255,255,0);
+}
+</string>
+           </property>
+           <property name="orientation">
+            <enum>Qt::Horizontal</enum>
+           </property>
+          </widget>
+         </item>
+         <item row="0" column="2">
+          <widget class="QLabel" name="ExposureCompensationLabel">
+           <property name="minimumSize">
+            <size>
+             <width>0</width>
+             <height>0</height>
+            </size>
+           </property>
+           <property name="maximumSize">
+            <size>
+             <width>31</width>
+             <height>31</height>
+            </size>
+           </property>
+           <property name="styleSheet">
+            <string notr="true">  color:rgb(255,255,255);
+background-color:rgb(255,255,255,0);</string>
+           </property>
+           <property name="text">
+            <string/>
+           </property>
+           <property name="alignment">
+            <set>Qt::AlignCenter</set>
+           </property>
+          </widget>
+         </item>
+        </layout>
+       </widget>
+      </item>
+      <item row="4" column="0">
+       <widget class="QWidget" name="widget_9" native="true">
+        <property name="styleSheet">
+         <string notr="true"/>
+        </property>
+        <layout class="QGridLayout" name="gridLayout_8" columnstretch="1,4,1">
+         <item row="0" column="0">
+          <widget class="QPushButton" name="whiteBalanceButton">
+           <property name="enabled">
+            <bool>false</bool>
+           </property>
+           <property name="minimumSize">
+            <size>
+             <width>31</width>
+             <height>31</height>
+            </size>
+           </property>
+           <property name="maximumSize">
+            <size>
+             <width>31</width>
+             <height>31</height>
+            </size>
+           </property>
+           <property name="styleSheet">
+            <string notr="true">image: url(:/icon/whiteBalance.png);
+background-color:rgb(255,255,255,0);</string>
+           </property>
+           <property name="text">
+            <string/>
+           </property>
+          </widget>
+         </item>
+         <item row="0" column="1">
+          <widget class="QSlider" name="whiteBalanceSlider">
+           <property name="focusPolicy">
+            <enum>Qt::NoFocus</enum>
+           </property>
+           <property name="styleSheet">
+            <string notr="true">QSlider::groove:horizontal { 
+	background: #cbcbcb; 
+	height: 6px; 
+	border-radius: 1px; 
+	padding-left:-1px;
+	padding-right:-1px;
+	padding-top:-1px;
+	padding-bottom:-1px;
+}
+
+QSlider::add-page:horizontal {
+	background: #cbcbcb;
+	border-radius: 2px;
+}
+QSlider::sub-page:horizontal
+{
+	background: qlineargradient(x1:0, y1:0, x2:0,y2:1,stop:0 #439cf4, stop:1 #439cf4);
+ 	background: qlineargradient(x1: 0, y1: 0.2, x2: 1, y2: 1,stop: 0 #439cf4, stop: 1 #439cf4);
+    width: 10px;
+	border-radius: 2px;
+}
+QSlider::handle:horizontal {
+	width: 13px; 
+	margin-top: -3px; 
+	margin-bottom: -3px; 
+	border-radius: 6px;
+	background: qradialgradient(spread:pad, cx:0.5, cy:0.5, radius:0.5, fx:0.5, fy:0.5,stop:0.6 #F0F0F0, stop:0.778409 #50A3F0);
+}
+
+QSlider{
+background-color:rgb(255,255,255,0);
+}
+</string>
+           </property>
+           <property name="orientation">
+            <enum>Qt::Horizontal</enum>
+           </property>
+          </widget>
+         </item>
+         <item row="0" column="2">
+          <widget class="QLabel" name="whiteBalanceLabel">
+           <property name="minimumSize">
+            <size>
+             <width>0</width>
+             <height>0</height>
+            </size>
+           </property>
+           <property name="maximumSize">
+            <size>
+             <width>31</width>
+             <height>31</height>
+            </size>
+           </property>
+           <property name="styleSheet">
+            <string notr="true">  color:rgb(255,255,255);
+background-color:rgb(255,255,255,0);</string>
+           </property>
+           <property name="text">
+            <string/>
+           </property>
+           <property name="alignment">
+            <set>Qt::AlignCenter</set>
+           </property>
+          </widget>
+         </item>
+        </layout>
+       </widget>
+      </item>
+     </layout>
+    </widget>
+   </item>
+   <item row="1" column="2">
+    <widget class="QLabel" name="DisInfoLabel">
+     <property name="text">
+      <string>当前要设置的Video</string>
+     </property>
+    </widget>
+   </item>
+  </layout>
+  <zorder>widget_4</zorder>
+  <zorder>widget_3</zorder>
+  <zorder>widget</zorder>
+  <zorder>widget_2</zorder>
+  <zorder>DisInfoLabel</zorder>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>

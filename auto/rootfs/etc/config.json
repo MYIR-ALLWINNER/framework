@@ -1,0 +1,58 @@
+{
+    "Product": [
+        {
+            "PN": "MYD-YT507",
+            "SN": "TW00001",
+            "CN": "ODM00001",
+	    "TEMPERATURE_PATH":"/sys/class/thermal/thermal_zone0/temp",
+            "LOG_LEVEL":8,
+            "VIEW_LOG":0,
+            "SWITCH_LOG_KEYNAME":"platform-gpio-keys-event",
+            "SWITCH_LOG_KEYVALUE":2,
+            "RECORD_LOG_PATH":"./aging_log.txt",
+            "RECORD_LOG_SIZE":209715200,
+            "CPU_LOAD":4
+        },
+        {
+            "RAM": [
+                    {
+                        "NAME": "ram_test1",
+                        "CMD": null,
+                        "ARGS": "-b 100M -c 2",
+                        "LOOPS": -1
+                    },
+                    {
+                        "NAME": "ram_test2",
+                        "CMD": null,
+                        "ARGS": "-b 10M -c 1",
+                        "LOOPS": -1
+                    }
+                ],
+            "FILEIO": [
+                    {
+                        "NAME": "fileio_test1",
+                        "CMD": null,
+                        "ARGS": "--hdd-noclean 0 --hdd-files 1 --hdd-bytes 524288000",
+                        "LOOPS": -1
+                    }
+                ],
+            "NET": [
+                    {
+                        "NAME": "net_test1",
+                        "CMD": null,
+                        "ARGS": "-I eth0 -i 1 -c 4 -p ff -s 1600 -ipaddr 192.168.40.105 -dstaddr 192.168.40.1",
+                        "LOOPS": -1
+                    }
+                ],
+            "USB": [
+                {
+                    "NAME": "usb_test1",
+                    "CMD": null,
+                    "ARGS": "-I sda",
+                    "LOOPS": -1
+                }
+            ]
+
+        }
+    ]
+}

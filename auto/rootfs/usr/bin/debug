@@ -1,0 +1,30 @@
+#!/bin/sh
+if  [ $# -lt 1 ];  then
+	echo "##############################"
+	echo "###useage:                 ###"
+	echo "###/debug /CameraUI        ###"
+	echo "###or                      ###"
+	echo "###/debug gdb /CameraUI    ###"
+	exit
+fi
+
+echo 0,0 > /sys/class/disp/disp/attr/fb2ui
+
+if  [ $# -gt 1 ];  then
+	var=$2
+	program=${var##*/}
+	echo "$program"
+	killall $2
+	echo $2, > /sys/inputFocus/write
+	FRAMEBUFFER=/dev/fb0 gdb $2
+else
+	var=$1
+	program=${var##*/}
+	echo "$program"
+	killall $1
+	echo $1, > /sys/inputFocus/write
+	FRAMEBUFFER=/dev/fb0 $1 
+fi
+
+
+

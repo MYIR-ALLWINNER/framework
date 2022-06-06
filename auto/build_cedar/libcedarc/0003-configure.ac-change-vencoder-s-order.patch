@@ -1,0 +1,40 @@
+From 66ca1a9a376321daa1c50784c34b2e509b6069d9 Mon Sep 17 00:00:00 2001
+From: xfang <xufang@allwinnertech.com>
+Date: Wed, 6 May 2020 11:52:07 +0800
+Subject: [PATCH 3/5] configure.ac:change vencoder's order
+
+---
+ libcedarc/configure.ac | 6 +++---
+ 1 file changed, 3 insertions(+), 3 deletions(-)
+
+diff --git a/libcedarc/configure.ac b/libcedarc/configure.ac
+index f13b38f..13d1255 100755
+--- a/libcedarc/configure.ac
++++ b/libcedarc/configure.ac
+@@ -7,7 +7,7 @@ AC_INIT([FULL-PACKAGE-NAME], [VERSION], [BUG-REPORT-ADDRESS])
+ ## 支持宏使用
+ AM_INIT_AUTOMAKE([-Wall -Werror subdir-objects foreign])
+ 
+-AC_CONFIG_SRCDIR([openmax/omxcore/inc/aw_omx_component.h])
++AC_CONFIG_SRCDIR([openmax/omxcore/include/aw_omx_component.h])
+ AC_CONFIG_HEADERS([config.h])
+ 
+ ## 不需要生成静态库
+@@ -56,12 +56,12 @@ AC_CONFIG_FILES([Makefile
+ 				base/Makefile
+ 				memory/Makefile
+ 				vdecoder/Makefile
++				vencoder/base/Makefile
++				vencoder/Makefile
+ 				openmax/Makefile
+ 				openmax/omxcore/Makefile
+ 				openmax/vdec/Makefile
+ 				openmax/venc/Makefile
+-                                vencoder/base/Makefile
+-				vencoder/Makefile				
+ 				])
+ 
+ AC_OUTPUT
+-- 
+1.9.1
+

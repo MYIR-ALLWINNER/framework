@@ -1,0 +1,6 @@
+#!/bin/sh
+if [ -d /sys/block/*/$MDEV ] || [ -d /sys/block/$MDEV -a ! -d /sys/block/$MDEV/$MDEV* ]
+then
+  mkdir -p /mnt/sdcard/$MDEV
+  /etc/mdev/do_mount /dev/$MDEV /mnt/sdcard/$MDEV -o defaults,noatime,async,utf8=1,umask=0111,errors=continue
+fi

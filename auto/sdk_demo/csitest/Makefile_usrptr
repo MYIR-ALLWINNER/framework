@@ -1,0 +1,26 @@
+#CC:=/home/linux01/t5longan06/out/t507/demo2.0/longan/buildroot/host/bin/aarch64-linux-gnu-gcc
+#ARCH_DIR=/home/linux01/t5longan06/kernel/linux-4.9/arch/arm64/include/
+ARCH_DIR=$(LICHEE_KERN_DIR)/arch/arm64/include/
+CFLAGS := -I $(ARCH_DIR)
+TARGET := csitestT5_ptr
+
+include ../makefile_cfg
+
+SDK_PATH =../../sdk_lib
+
+INC = -I$(SDK_PATH)/include
+
+.PHONY: all clean
+
+all: $(TARGET)
+
+$(TARGET): csi_test_mplane_usrptr.c DmaIon.cpp
+	$(CPP) -c DmaIon.cpp -o DmaIon.o $(CFLAGS) $(INC)-g
+	$(CC) -c csi_test_mplane_usrptr.c -o csi_test_mplane_usrptr.o $(CFLAGS) $(INC) -g
+	$(CC) -o $(TARGET) DmaIon.o csi_test_mplane_usrptr.o
+
+clean:
+	rm -rf $(TARGET) csitestT5 *.o
+
+install:
+	-cp $(Target) $(INSTATLL_PATH) 

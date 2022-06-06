@@ -1,5 +1,8 @@
 # Prerequisites
 *.d
+./qt/qt-everywhere-src-5.12.5.tar.gz
+./qt/qt-everywhere-src-5.12.5/
+qt-everywhere-src-5.12.5.tar.gz
 
 # Object files
 *.o

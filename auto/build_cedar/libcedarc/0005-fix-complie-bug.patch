@@ -1,0 +1,25 @@
+From 4afdc5204c75abf2e484de912a30a62143737ea2 Mon Sep 17 00:00:00 2001
+From: xfang <xufang@allwinnertech.com>
+Date: Wed, 6 May 2020 11:57:21 +0800
+Subject: [PATCH 5/5] fix complie bug
+
+---
+ libcedarc/openmax/venc/omx_venc.c | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+diff --git a/libcedarc/openmax/venc/omx_venc.c b/libcedarc/openmax/venc/omx_venc.c
+index 8d15057..ae7c79d 100755
+--- a/libcedarc/openmax/venc/omx_venc.c
++++ b/libcedarc/openmax/venc/omx_venc.c
+@@ -4097,7 +4097,7 @@ static void* ComponentVencThread(void* pThreadData)
+                 impl->mTimeUs2 = GetNowUs();
+                 logw("MicH264Enc, VideoEncodeOneFrame time %lld.\
+                      buffer by encoder %ld and by decoder %ld.",
+-                    (impl->mTimeUs2-impl->mTimeUs1), impl->m_outBufferCountOwnedByEncoder,
++                    (long long int)(impl->mTimeUs2-impl->mTimeUs1), (long int)impl->m_outBufferCountOwnedByEncoder,
+                     impl->m_outBufferCountOwnedByRender);
+             }
+ 
+-- 
+1.9.1
+
