@@ -1,0 +1,24 @@
+QMAKE_CXX.QT_COMPILER_STDCXX = 201402L
+QMAKE_CXX.QMAKE_GCC_MAJOR_VERSION = 7
+QMAKE_CXX.QMAKE_GCC_MINOR_VERSION = 3
+QMAKE_CXX.QMAKE_GCC_PATCH_VERSION = 1
+QMAKE_CXX.COMPILER_MACROS = \
+    QT_COMPILER_STDCXX \
+    QMAKE_GCC_MAJOR_VERSION \
+    QMAKE_GCC_MINOR_VERSION \
+    QMAKE_GCC_PATCH_VERSION
+QMAKE_CXX.INCDIRS = \
+    /home/caixingshun/bby/aw_t113/out/t113/evb1_auto/longan/buildroot/host/opt/ext-toolchain/arm-linux-gnueabi/include/c++/7.3.1 \
+    /home/caixingshun/bby/aw_t113/out/t113/evb1_auto/longan/buildroot/host/opt/ext-toolchain/arm-linux-gnueabi/include/c++/7.3.1/arm-linux-gnueabi \
+    /home/caixingshun/bby/aw_t113/out/t113/evb1_auto/longan/buildroot/host/opt/ext-toolchain/arm-linux-gnueabi/include/c++/7.3.1/backward \
+    /home/caixingshun/bby/aw_t113/out/t113/evb1_auto/longan/buildroot/host/opt/ext-toolchain/lib/gcc/arm-linux-gnueabi/7.3.1/include \
+    /home/caixingshun/bby/aw_t113/out/t113/evb1_auto/longan/buildroot/host/opt/ext-toolchain/lib/gcc/arm-linux-gnueabi/7.3.1/include-fixed \
+    /home/caixingshun/bby/aw_t113/out/t113/evb1_auto/longan/buildroot/host/opt/ext-toolchain/arm-linux-gnueabi/include \
+    /home/caixingshun/bby/aw_t113/out/t113/evb1_auto/longan/buildroot/host/arm-buildroot-linux-gnueabi/sysroot/usr/include
+QMAKE_CXX.LIBDIRS = \
+    /home/caixingshun/bby/aw_t113/out/t113/evb1_auto/longan/buildroot/host/opt/ext-toolchain/lib/gcc/arm-linux-gnueabi/7.3.1 \
+    /home/caixingshun/bby/aw_t113/out/t113/evb1_auto/longan/buildroot/host/opt/ext-toolchain/lib/gcc/arm-linux-gnueabi \
+    /home/caixingshun/bby/aw_t113/out/t113/evb1_auto/longan/buildroot/host/opt/ext-toolchain/lib/gcc \
+    /home/caixingshun/bby/aw_t113/out/t113/evb1_auto/longan/buildroot/host/opt/ext-toolchain/arm-linux-gnueabi/lib \
+    /home/caixingshun/bby/aw_t113/out/t113/evb1_auto/longan/buildroot/host/arm-buildroot-linux-gnueabi/sysroot/lib \
+    /home/caixingshun/bby/aw_t113/out/t113/evb1_auto/longan/buildroot/host/arm-buildroot-linux-gnueabi/sysroot/usr/lib

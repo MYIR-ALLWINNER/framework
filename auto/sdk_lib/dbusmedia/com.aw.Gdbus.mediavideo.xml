@@ -1,0 +1,17 @@
+<node>
+  <interface name="com.aw.Gdbus.mediavideo">
+    <signal name="signalmediovideo">
+      <arg name="Value" type="(iii)"/>
+    </signal>
+
+    <method name="MethodCmdSet">
+      <arg name="InArg"  direction="in"  type="(iiis)"/>
+      <arg name="OutArg" direction="out" type="(iiix)"/>
+    </method>
+	
+    <method name="MethodCmdGet">
+      <arg name="InArg"  direction="in"  type="(ii)"/>
+      <arg name="OutArg" direction="out" type="i"/>
+    </method>
+  </interface>
+</node>

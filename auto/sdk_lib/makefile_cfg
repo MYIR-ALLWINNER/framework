@@ -1,0 +1,77 @@
+#gcc编译过程开部分打印
+DEBUG_CC_ECHO_SIMPLE :=1
+
+#gcc编译过程全开
+DEBUG_CC_ECHO_FULL :=0
+
+ifeq ("$(DEBUG_CC_ECHO_SIMPLE)","1")
+E:=
+else
+E:=@
+endif
+
+ifeq ("$(DEBUG_CC_ECHO_FULL)","1")
+V:=-v
+else
+V:=
+endif
+
+SDK_PATH=../../sdk_lib
+
+SDK_LIBS = $(SDK_PATH)/libs
+
+ifneq (,$(filter $(LICHEE_IC),t113 t113_i))
+DEFINES+=-D_T113_
+endif
+
+$(shell mkdir -p $(SDK_LIBS))
+
+ifeq ("x$(LICHEE_BR_OUT)","x")
+TOOLTRAIN_ERR_STRING = ' ========================tooltrain report=======================================\n'\
+						'LICHEE_BR_OUT is empty at env\n'\
+						'pls run "\e[1;33msource build/envsetup.sh\e[0m" at the top lichee/longan dir\n'\
+						'if you dont have envsetup.sh file,just edit this file to set LICHEE_BR_OUT var\n'\
+						'========================tooltrain report =======================================\n'
+else
+TOOLTRAIN_ERR_STRING = ""
+endif
+
+#LICHEE_BR_OUT=/home/xxx/t564/longan/out/t507/demo2.0/longan/buildroot
+#GCC=$LICHEE_BR_OUT/host/bin/aarch64-linux-gnu-gcc
+#OUT_GCC = `find ${LICHEE_BR_OUT} -perm /a+x -a -regex '.*-gcc'`
+#OUT_CPP = `find ${LICHEE_BR_OUT} -perm /a+x -a -regex '.*-g\+\+'`
+#OUT_STRIP = `find ${LICHEE_BR_OUT} -perm /a+x -a -regex '.*-strip'`
+SYSROOT = ${LICHEE_OUT_DIR}/${LICHEE_IC}/${LICHEE_BOARD}/${LICHEE_LINUX_DEV}/buildroot/host/bin/{LICHEE_CROSS_COMPILER}-gcc
+
+CC = ${LICHEE_CROSS_COMPILER}-gcc -g $(V)
+CPP = ${LICHEE_CROSS_COMPILER}-g++ -g $(V)
+STRIP = ${LICHEE_CROSS_COMPILER}-strip
+
+
+
+
+
+PATH1 := $(LICHEE_BR_OUT)/host/bin/:$(PATH)
+PATH = $(PATH1)
+export $(PATH)
+
+CDXINC=$(SDK_PATH)/cedarx/include
+CDXEXT=$(SDK_PATH)/cedarx/include/external/include
+CDXCOR=$(SDK_PATH)/cedarx/include/libcore
+CDXMETA=$(CDXINC)/xmetadataretriever/include
+
+CDX=$(CDXINC):CDXEXT=$(CDXEXT):CDXCOR=$(CDXCOR):$(CDXINC):$(CDXMETA):$(CDXINC)/xplayer/include:$(CDXEXT):$(CDXEXT)/adecoder:$(CDXEXT)/aencoder:$(CDXEXT)/alsa/sound:$(CDXEXT)/adecoder:$(CDXEXT)/libxml:$(CDXEXT)/live:$(CDXEXT)/openssl:$(CDXEXT)/sdecoder:$(CDXEXT)/include/zlib:$(CDXINC)/libcedarc/include:$(CDXCOR)/base/include:$(CDXCOR)/muxer/include:$(CDXCOR)/parser/include:$(CDXCOR)/stream/include:$(CDXCOR)/common/iniparser:$(CDXCOR)/common/plugin:$(CDXCOR)/playback/include:$(CDXCOR)/libion/include
+
+
+export CPLUS_INCLUDE_PATH :=$(SDK_PATH)/include:$(SDK_PATH)/include/linux:$(SDK_PATH)/include/camera:$(CDX)
+export C_INCLUDE_PATH=$(SDK_PATH)/include:$(SDK_PATH)/include/linux:$(CDX)
+		
+ANDROID_UTILS_DEF = -DHAVE_PTHREADS -DHAVE_SYS_UIO_H -DANDROID_SMP=1 -D__ARM_HAVE_DMB -D__ARM_HAVE_LDREX_STREX -DHAVE_POSIX_CLOCKS -DHAVE_PRCTL
+SDKLIB_DEF = -DWATERMARK -DCDX_V27 -DSUPPORT_NEW_DRIVER
+#DEFINES += $(ANDROID_UTILS_DEF) $(SDKLIB_DEF)
+			
+#GPU 导入摄像头纹理显示
+#DEFINES +=-DDMAFD_TEST
+
+CEDAR_MACORS = -D_GNU_SOURCE -DCONFIG_CHIP=7 -DCONFIG_TARGET_PRODUCT= -DCONFIG_PRODUCT=2 \
+				-DCONFIG_VE_IPC=1 -DROTATE_PIC_HW=0 -DVE_PHY_OFFSET=0x40000000 -DCONFIG_LOG_LEVEL=0 

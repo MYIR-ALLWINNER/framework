@@ -1,0 +1,24 @@
+QMAKE_CXX.QT_COMPILER_STDCXX = 201402L
+QMAKE_CXX.QMAKE_GCC_MAJOR_VERSION = 7
+QMAKE_CXX.QMAKE_GCC_MINOR_VERSION = 3
+QMAKE_CXX.QMAKE_GCC_PATCH_VERSION = 1
+QMAKE_CXX.COMPILER_MACROS = \
+    QT_COMPILER_STDCXX \
+    QMAKE_GCC_MAJOR_VERSION \
+    QMAKE_GCC_MINOR_VERSION \
+    QMAKE_GCC_PATCH_VERSION
+QMAKE_CXX.INCDIRS = \
+    /media/home/nico/RC/T113-I/SDK/out/t113/myd_yt113_s3_emmc_core/longan/buildroot/host/opt/ext-toolchain/arm-linux-gnueabi/include/c++/7.3.1 \
+    /media/home/nico/RC/T113-I/SDK/out/t113/myd_yt113_s3_emmc_core/longan/buildroot/host/opt/ext-toolchain/arm-linux-gnueabi/include/c++/7.3.1/arm-linux-gnueabi \
+    /media/home/nico/RC/T113-I/SDK/out/t113/myd_yt113_s3_emmc_core/longan/buildroot/host/opt/ext-toolchain/arm-linux-gnueabi/include/c++/7.3.1/backward \
+    /media/home/nico/RC/T113-I/SDK/out/t113/myd_yt113_s3_emmc_core/longan/buildroot/host/opt/ext-toolchain/lib/gcc/arm-linux-gnueabi/7.3.1/include \
+    /media/home/nico/RC/T113-I/SDK/out/t113/myd_yt113_s3_emmc_core/longan/buildroot/host/opt/ext-toolchain/lib/gcc/arm-linux-gnueabi/7.3.1/include-fixed \
+    /media/home/nico/RC/T113-I/SDK/out/t113/myd_yt113_s3_emmc_core/longan/buildroot/host/opt/ext-toolchain/arm-linux-gnueabi/include \
+    /media/home/nico/RC/T113-I/SDK/out/t113/evb1_auto/longan/buildroot/host/arm-buildroot-linux-gnueabi/sysroot/usr/include
+QMAKE_CXX.LIBDIRS = \
+    /media/home/nico/RC/T113-I/SDK/out/t113/myd_yt113_s3_emmc_core/longan/buildroot/host/opt/ext-toolchain/lib/gcc/arm-linux-gnueabi/7.3.1 \
+    /media/home/nico/RC/T113-I/SDK/out/t113/myd_yt113_s3_emmc_core/longan/buildroot/host/opt/ext-toolchain/lib/gcc/arm-linux-gnueabi \
+    /media/home/nico/RC/T113-I/SDK/out/t113/myd_yt113_s3_emmc_core/longan/buildroot/host/opt/ext-toolchain/lib/gcc \
+    /media/home/nico/RC/T113-I/SDK/out/t113/myd_yt113_s3_emmc_core/longan/buildroot/host/opt/ext-toolchain/arm-linux-gnueabi/lib \
+    /media/home/nico/RC/T113-I/SDK/out/t113/evb1_auto/longan/buildroot/host/arm-buildroot-linux-gnueabi/sysroot/lib \
+    /media/home/nico/RC/T113-I/SDK/out/t113/evb1_auto/longan/buildroot/host/arm-buildroot-linux-gnueabi/sysroot/usr/lib

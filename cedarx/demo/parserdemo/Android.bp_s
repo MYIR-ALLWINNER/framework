@@ -1,0 +1,30 @@
+cc_binary {
+    name: "parserdemo",
+    defaults: ["libcdx_config_defaults"],
+    arch: {
+        arm: {
+            instruction_set: "arm",
+        },
+    },
+
+    srcs: [
+        "testParser.c"
+    ],
+    include_dirs: [
+        "frameworks/av/media/libcedarc/include",
+        "frameworks/av/media/libcedarx/libcore/base/include",
+        "frameworks/av/media/libcedarx/libcore/parser/include",
+        "frameworks/av/media/libcedarx/libcore/stream/include",
+        "frameworks/av/media/libcedarx/external/include/adecoder",
+    ],
+    shared_libs: [
+        "libcutils",
+        "libutils",
+        "liblog",
+        "libvdecoder",
+        "libcdx_base",
+        "libcdx_stream",
+        "libcdx_parser",
+    ],
+    cflags: ["-Werror"],
+}

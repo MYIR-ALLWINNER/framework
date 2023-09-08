@@ -1,0 +1,2 @@
+source ../../../.buildconfig
+./build.sh

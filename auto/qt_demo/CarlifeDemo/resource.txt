@@ -1,0 +1,141 @@
+ls -rlt /dev/input/查看输入设备
+
+chmod 777 /dev/input/event1
+
+
+getevent小程序接收触屏事件
+
+/dev/input/event4: 0003 0039 00000002
+                   type code   value
+type:
+0000:EV_SYN 同步信号量
+0001:EV_KEY 按键
+0003:EV_ABS 触摸点
+例子：
+第一个坐标
+/dev/input/event1: 0003 0039 00000000 EV_ABS ABS_MT_TRACKING_ID 0
+/dev/input/event1: 0003 0035 000001b0 EV_ABS ABS_MT_POSITION_X 0x1b0
+/dev/input/event1: 0003 0036 000000d7 EV_ABS ABS_MT_POSITION_Y 0xd7
+/dev/input/event1: 0003 003a 00000001 EV_ABS  ABS_MT_PRESSURE 0x1
+/dev/input/event1: 0003 0032 00000001 EV_ABS ABS_MT_WIDTH_MAJOR 0x1
+/dev/input/event1: 0000 0002 00000000 EV_SYN SYN_MT_REPORT 0
+/dev/input/event1: 0000 0000 00000000 EV_SYN SYN_REPORT 0
+第二个坐标
+/dev/input/event1: 0003 0039 00000000 EV_ABS ABS_MT_TRACKING_ID 0
+/dev/input/event1: 0003 0035 000001b0 EV_ABS ABS_MT_POSITION_X 0x1b0
+/dev/input/event1: 0003 0036 000000d7 EV_ABS ABS_MT_POSITION_Y 0xd7
+/dev/input/event1: 0003 003a 00000001 EV_ABS  ABS_MT_PRESSURE 0x1
+/dev/input/event1: 0003 0032 00000001 EV_ABS ABS_MT_WIDTH_MAJOR 0x1
+/dev/input/event1: 0000 0002 00000000 EV_SYN SYN_MT_REPORT 0
+/dev/input/event1: 0000 0000 00000000 EV_SYN SYN_REPORT 0
+第三个坐标
+/dev/input/event1: 0003 0039 00000000 EV_ABS ABS_MT_TRACKING_ID 0
+/dev/input/event1: 0003 0035 00000191 EV_ABS ABS_MT_POSITION_X 0x191
+/dev/input/event1: 0003 0036 00000098 EV_ABS ABS_MT_POSITION_Y 0x98
+/dev/input/event1: 0003 003a 00000001 EV_ABS  ABS_MT_PRESSURE 0x1
+/dev/input/event1: 0003 0032 00000001 EV_ABS ABS_MT_WIDTH_MAJOR 0x1
+/dev/input/event1: 0000 0002 00000000 EV_SYN SYN_MT_REPORT 0
+/dev/input/event1: 0000 0000 00000000 EV_SYN SYN_REPORT 0
+松开
+/dev/input/event1: 0000 0002 00000000 EV_SYN SYN_MT_REPORT 0
+/dev/input/event1: 0000 0000 00000000 EV_SYN SYN_REPORT
+这里是一次点击，注意到ABS_MT_TRACKING_ID都是一样的。系统检测到三个点，每次会发送点的x,y,以及收到的压力，触摸的范围。最后两条表示松开这个点。如果两个手指同时点击，可以发现ABS_MT_TRACKING_ID会有两个不同的值，分别是两个点。据说最多支持5点。 0
+
+
+
+void *getCtrlMessage(void *junk)
+{
+ int Flag = 1; 
+    ts = ts_open("/dev/event1", 0);
+ ts_config(ts) 
+ for(;;)
+ {
+  if(ts_read(ts , &sample, 1))
+  {
+   if((sample.pressure) && (Flag == 1))
+   {
+    comparison(sample, RectArray, &virtualValue);
+       Flag = 0; //防止处理那些由于抖动所产生触摸点信息   
+   }
+   if(sample.pressure == 0)
+    Flag = 1;
+  }            
+ } 
+ ts_close(ts);       
+}
+ 在Qt源代码中search : tslib对上层的接口函数ts_read() /ts_read_raw()=> 仅有src/gui/embedded/qmousetslib_qws.cpp中调用, 可见,类QWSTslibMouseHandlerPrivate 采样tslib提供的触摸屏事件,并作为鼠标事件提交给上层(即图中的MouseHandler).
+嵌入式LinuxQt中的一种可校验并能降噪的MouseHandler: QWSCalibratedMouseHandler, QWSTslibMouseHandler为其派生类,其对tslib的触控事件封装为鼠标事件
+
+
+解决触摸屏和鼠标有差异的问题
+http://blog.csdn.net/applezhou6699/article/details/46357643
+
+http://blog.csdn.net/dzw19911024/article/details/69383396
+Qt触摸屏例子
+
+http://www.qtcn.org/bbs/read-htm-tid-55183.html
+
+http://blog.csdn.net/liang890319/article/details/7250244
+
+让Qt支持多点触控
+http://blog.csdn.net/wyy626562203/article/details/79218186
+
+Qt5.1 eventFilter接收不到TouchEnd事件
+https://bbs.csdn.net/topics/390686768
+
+
+
+
+
+touch事件要在event事件中进行处理，如果你是使用的QGraphicsView的话需要在ViewportEvent中处理。
+touch事件分为touchstart,update和end，这些事件只是标识触摸的开始，更新和结束，而我们真正要处理的是点的press，move和release状态。
+
+至于touch会自动转换成mouse事件，这个从查阅QT的自带的实现代码就可以看出来了，所以在touch'需要几个标识，在鼠标中作判断是touch还是mouse
+
+一段说明代码"
+bool TouchLayer::event(QEvent *event)
+{
+    QEvent::Type type = event->type();
+    if (type == QEvent::TouchBegin || type == QEvent::TouchEnd || type == QEvent::TouchUpdate) {
+        emit signal_touchwidth_show();
+        QTouchEvent *touchEvent = static_cast<QTouchEvent *>(event);
+        QList<QTouchEvent::TouchPoint> touchPoints = touchEvent->touchPoints();
+        foreach (const QTouchEvent::TouchPoint &touchPoint, touchPoints) {
+            QPoint touchPos;
+            //这里处理下，一般来说第一个点会被处理自动转换为鼠标
+            //所以你需要添加一个bool的标识来在mouse事件处理时候
+            //判断要不要处理
+             if (touchPoint.id() == 0) {
+                    if (touchPoint.state() == Qt::TouchPointPressed) {
+                        mouseTouchInProgress = true;
+                    } else if (touchPoint.state() == Qt::TouchPointReleased) {
+                        mouseTouchInProgress = false;
+                    }
+                }
+ 
+            //处理touch其实更多是对点状态的处理
+            switch (touchPoint.state()) {
+            case Qt::TouchPointPressed:{
+                
+            }
+                    break;
+            case Qt::TouchPointMoved:{
+                 
+            }
+                break;
+            case Qt::TouchPointReleased:{
+                
+                break;
+            default:
+                break;
+            }
+        }
+ 
+        // 触摸结束
+        if(type == QEvent::TouchEnd){
+        }
+           
+    }
+ 
+    return QWidget::event(event);
+}

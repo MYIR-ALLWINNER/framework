@@ -1,0 +1,6 @@
+#!/bin/sh
+. ../../misc_config
+export LICHEE_CHIP=${LICHEE_CHIP}
+export PATH=$PATH:$PWD/../../../../../$LICHEE_TOOL/
+../../../../../buildroot-201611/dl/qt-everywhere-opensource-src-${AWQT_VERSION}/Qt-${AWQT_VERSION}/bin/qmake -o Makefile DvrUI.pro
+make -j32
