@@ -1,0 +1,27 @@
+#ifndef _dbusmediatype_h_
+#define _dbusmediatype_h_
+
+typedef enum media_video_msg_
+{
+	MEDIA_VIDEO_CMD_SETURL,
+	MEDIA_VIDEO_CMD_PLAY,
+	MEDIA_VIDEO_CMD_PAUSE,
+	MEDIA_VIDEO_CMD_SEEKTO,
+	MEDIA_VIDEO_CMD_GETPOS,
+	MEDIA_VIDEO_CMD_GETDUR,
+	MEDIA_VIDEO_CMD_STOP,
+	MEDIA_VIDEO_CMD_GETMEDIAINFO,
+	MEDIA_VIDEO_CMD_SETSUB_TITILE,
+	MEDIA_VIDEO_CMD_SETAUDIO,
+	MEDIA_VIDEO_CMD_GETSTATUS,
+	MEDIA_VIDEO_CMD_INIT,
+	
+}media_video_msg;
+typedef enum mv_msg_type_
+{
+	MEDIA_VIDEO_TYPE_STAT = 16, 
+	MEDIA_VIDEO_TYPE_PLAYERCB = 17, 
+
+}mv_msg_type;
+
+#endif

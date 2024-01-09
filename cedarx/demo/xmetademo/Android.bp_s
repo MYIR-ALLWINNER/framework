@@ -1,0 +1,50 @@
+cc_binary {
+    name: "xmetademo",
+    defaults: ["config_defaults"],
+
+    srcs: [
+        "xmetademo.c"
+    ],
+
+    include_dirs: [
+        "frameworks/av/media/libcedarc/include/",
+        "frameworks/av/media/libcedarx/libcore/base",
+        "frameworks/av/media/libcedarx/libcore/parser/include",
+        "frameworks/av/media/libcedarx/libcore/stream/include",
+        "frameworks/av/media/libcedarx/libcore/base/include",
+        "frameworks/av/media/libcedarx/libcore/common/iniparser",
+        "frameworks/av/media/libcedarx/external/include/adecoder",
+        "frameworks/av/media/libcedarx/external/include",
+        "frameworks/av/media/libcedarx/xmetadataretriever/include",
+        "frameworks/av/media/libcedarx",
+    ],
+
+    cflags: [
+        "-Wno-error=parentheses-equality",
+        "-Wno-error=shift-negative-value",
+        "-Wno-error=unused-variable",
+        "-Wno-error=unused-function",
+        "-Wno-error=unused-label",
+        "-Wno-error=unused-value",
+        "-Wno-error=sign-compare",
+        "-Wno-error=unused-parameter",
+        "-Wno-error=incompatible-pointer-types",
+        "-Wno-error=implicit-function-declaration",
+        "-Wno-error=format",
+        "-Wno-error=return-type",
+        "-Wno-error=uninitialized",
+    ],
+
+    shared_libs: [
+        "libcutils",
+        "libutils",
+        "libvdecoder",
+        "libVE",
+        "libMemAdapter",
+        "libcdx_base",
+        "libcdx_stream",
+        "libcdx_parser",
+        "libcdx_common",
+        "libxmetadata_retriever",
+    ],
+}

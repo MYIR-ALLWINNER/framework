@@ -1,0 +1,5 @@
+#!/bin/sh
+PATH=$LICHEE_BR_OUT/host/bin/:$PATH
+$QT_INSTALL_DIR/bin/qmake -o Makefile painting.pro
+make -j32
+exit $?

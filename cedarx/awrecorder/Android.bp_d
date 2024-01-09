@@ -1,0 +1,52 @@
+cc_library_shared {
+    name: "libawrecorder",
+
+    arch: {
+        arm: {
+            instruction_set: "arm",
+        },
+    },
+
+    srcs: [
+        "AudioEncodeComponent.c",
+        "awencoder.c",
+        "EncDataComponent.c",
+        "VideoEncodeComponent.c"
+        ],
+    include_dirs: [
+        "frameworks/av/media/libcedarx/",
+        "frameworks/av/media/libcedarx/libcore/base/include",
+        "frameworks/av/media/libcedarx/libcore/muxer/include/",
+        "frameworks/av/media/libcedarx/external/include/aencoder",
+        "frameworks/av/media/libcedarc/include",
+    ],
+
+	cflags: [
+        "-Wno-error=parentheses-equality",
+        "-Wno-error=shift-negative-value",
+        "-Wno-error=unused-variable",
+        "-Wno-error=unused-function",
+        "-Wno-error=unused-label",
+        "-Wno-error=unused-value",
+        "-Wno-error=sign-compare",
+        "-Wno-error=unused-parameter",
+        "-Wno-error=incompatible-pointer-types",
+        "-Wno-error=implicit-function-declaration",
+        "-Wno-error=format",
+        "-Wno-error=return-type",
+        "-Wno-error=uninitialized",
+    ],
+    shared_libs: [
+        "libvencoder",
+        "libvenc_base",
+        "libVE",
+        "liblog",
+        "libutils",
+        "libcutils",
+        "libcdx_muxer",
+        "libaencoder",
+        "libcdx_base",
+        "libMemAdapter",
+    ],
+
+}

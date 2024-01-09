@@ -1,0 +1,5 @@
+#!/bin/sh
+. ../../misc_config
+export PATH=$PATH:$PWD/../../../../../$LICHEE_TOOL/
+../../../../../buildroot-201611/dl/qt-everywhere-opensource-src-${AWQT_VERSION}/Qt-${AWQT_VERSION}/bin/qmake -o Makefile CarlifeDemo.pro
+make -j32

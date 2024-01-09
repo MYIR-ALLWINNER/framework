@@ -1,0 +1,19 @@
+<RCC>
+    <qresource prefix="/">
+        <file>pmc_image/bg.png</file>
+        <file>pmc_image/connecting.png</file>
+        <file>pmc_image/download.png</file>
+        <file>pmc_image/ic_arrow.png</file>
+        <file>pmc_image/ic_back_default.png</file>
+        <file>pmc_image/ic_back_pressed.png</file>
+        <file>pmc_image/ic_exit_normal.png</file>
+        <file>pmc_image/ic_exit_pressed.png</file>
+        <file>pmc_image/ic_help_default.png</file>
+        <file>pmc_image/ic_help_pressed.png</file>
+        <file>pmc_image/logo.png</file>
+        <file>pmc_image/pmHorizontal_line.png</file>
+        <file>pmc_image/btn_suspend_normal.png</file>
+        <file>pmc_image/btn_suspend_pressed.png</file>
+        <file>pmc_image/welcome.png</file>
+    </qresource>
+</RCC>

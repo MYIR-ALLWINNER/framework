@@ -1,0 +1,3 @@
+此demo验证支持RGB888/RGB565图片颜色格式
+
+测试方法：修改yuvtest.cpp中的INPUT_BMP_PATH和DISP_FMT对应相应的格式和图片路径即可。

@@ -1,0 +1,16 @@
+<RCC>
+    <qresource prefix="/">
+        <file>image/icon/close_button.png</file>
+        <file>image/icon/usb.png</file>
+        <file>image/icon/wifi.png</file>
+        <file>image/icon/android.png</file>
+        <file>image/icon/mac.png</file>
+        <file>image/icon/error.png</file>
+        <file>image/icon/info.png</file>
+        <file>image/icon/question.png</file>
+        <file>image/icon/waiting_1.gif</file>
+        <file>image/icon/waitting_3.gif</file>
+        <file>image/icon/connect.png</file>
+        <file>image/icon/disconnect.png</file>
+    </qresource>
+</RCC>

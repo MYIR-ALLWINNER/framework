@@ -1,0 +1,8 @@
+#!/bin/sh
+#QT_INSTALL_DIR=/home/ytr/workdir/T113/V1.1/T113-i_v1.0/platform/framework/qt/qt-everywhere-src-5.12.5/Qt_5.12.5
+#LICHEE_BR_OUT=/home/ytr/workdir/T113/V1.1/T113-i_v1.0/out/t113/evb1_auto/longan/buildroot
+echo "YTR===$QT_INSTALL_DIR"
+PATH=$LICHEE_BR_OUT/host/bin/:$PATH
+$QT_INSTALL_DIR/bin/qmake -o Makefile painting.pro
+make -j32
+exit $?

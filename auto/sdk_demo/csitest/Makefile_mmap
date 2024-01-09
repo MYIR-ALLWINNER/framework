@@ -1,0 +1,20 @@
+#CC:=/home/linux01/t5longan06/out/t507/demo2.0/longan/buildroot/host/bin/aarch64-linux-gnu-gcc
+#ARCH_DIR=/home/linux01/t5longan06/kernel/linux-4.9/arch/arm64/include/
+ARCH_DIR=$(LICHEE_KERN_DIR)/arch/arm64/include/
+CFLAGS := -I $(ARCH_DIR)
+TARGET := csitestT113
+
+include ../makefile_cfg
+
+.PHONY: all clean
+
+all: $(TARGET)
+
+$(TARGET): csi_test_mplane.c
+	$(CC) $(CFLAGS) -static  $^  -o  $@
+
+clean:
+	rm -rf $(TARGET) csitestT113 *.o
+
+install:
+	-cp $(Target) $(INSTATLL_PATH) 

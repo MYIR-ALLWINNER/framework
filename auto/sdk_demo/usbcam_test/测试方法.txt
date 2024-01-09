@@ -1,0 +1,30 @@
+注意：
+./usbcam_test 6 0 1280 720 ./ 1 30 25
+6   	/dev/video6
+0   	sel
+w   	1280
+h   	720
+./  	path_name
+1   	mode
+30	test_cnt
+25	fps
+
+测试现象：
+运行时，会出现如以下的 log
+# ./csitestT5 6 0 1280 720 ./tmp/ 1 30 25
+open /dev/video6 fd = 3
+mCameraType = CAMERA_TYPE_UVC
+format index = 0, name = YUYV 4:2:2, v4l2 pixel format = 56595559
+format index = 0, name = YUYV 4:2:2, v4l2 pixel format = 56595559
+format index = 0, name = YUYV 4:2:2, v4l2 pixel format = 56595559
+capture format: V4L2_PIX_FMT_YUYV
+ pixel format is 56595559
+resolution got from sensor = 1280*720 num_planes = 0
+VIDIOC_STREAMON ok
+VIDIOC_STREAMOFF ok
+mode 1 test done at the 0 time!!
+time cost 3.744699(s)
+
+注意：
+1. 此 csitest 只适用于 usb camera 的调试，并不通用于其他 AHD camera 的应用
+2. mode 注意无需改动，保持 1 便可,如果修改为 0 ，则为获取 MJPEG 的格式数据流
