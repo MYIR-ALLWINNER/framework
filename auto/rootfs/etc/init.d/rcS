@@ -54,4 +54,8 @@ if [ ! -f "/usr/lib/libssl.so.1.0.0" ]; then
     ln -s /usr/lib/libssl.so.1.1 /usr/lib/libssl.so.1.0.0
 fi
 
-. /etc/qtenv.sh
+echo 35 > /sys/class/gpio/export
+echo out > /sys/class/gpio/gpio35/direction
+echo 0 > /sys/class/gpio/gpio35/value
+
+. /etc/qtenv.sh && Launcher &

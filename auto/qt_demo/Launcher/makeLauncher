@@ -1,4 +1,5 @@
 #!/bin/sh
+echo "YTR===$QT_INSTALL_DIR"
 PATH=$LICHEE_BR_OUT/host/bin/:$PATH
 $QT_INSTALL_DIR/bin/qmake -o Makefile Launcher.pro
 make -j32

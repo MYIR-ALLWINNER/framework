@@ -59,8 +59,8 @@ cp -f $LOCAL_PATH/libcedarc/include/* $SDK_PATH/cedarx/include/libcedarc/include
 
 
 cp -f $LICHEE_PLATFORM_DIR/framework/auto/sdk_lib/libsdk.so             $LICHEE_BR_OUT/target/usr/lib/
-cp -f $LICHEE_PLATFORM_DIR/framework/auto/sdk_lib/libs/*                     $LICHEE_BR_OUT/target/usr/lib/
-cp -f $LICHEE_PLATFORM_DIR/framework/auto/sdk_lib/cedarx/lib/*.so             $LICHEE_BR_OUT/target/usr/lib/
+cp -a $LICHEE_PLATFORM_DIR/framework/auto/sdk_lib/libs/*                     $LICHEE_BR_OUT/target/usr/lib/
+cp -a $LICHEE_PLATFORM_DIR/framework/auto/sdk_lib/cedarx/lib/*.so             $LICHEE_BR_OUT/target/usr/lib/
 cp -f $LICHEE_PLATFORM_DIR/framework/auto/sdk_lib/cedarx/bin/*           	 $LICHEE_BR_OUT/target/usr/bin/
 cp -f $LICHEE_PLATFORM_DIR/framework/auto/sdk_demo/bin/* 					 $LICHEE_BR_OUT/target/usr/bin/
 cp -rf $LICHEE_PLATFORM_DIR/framework/auto/rootfs/*                          $LICHEE_BR_OUT/target/

@@ -25,7 +25,9 @@ SUBDIRS := \
 	sdk_memory  \
 	sdk_decoder   \
 	sdk_encoder   \
+	live555 \
 	sdk_stream_player
+	
 
 #	dbusmedia 
 #	videoproxy

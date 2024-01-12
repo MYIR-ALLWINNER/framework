@@ -3,7 +3,7 @@ import QtMultimedia 5.6
 import QtQuick.Window 2.2
 import QtQuick.Dialogs 1.0
 import Qt.labs.folderlistmodel 2.2
-import QtQuick.Controls 2.3
+import QtQuick.Controls 2.2
 import QtQuick.Layouts 1.3
 
 SystemWindow {
@@ -84,8 +84,10 @@ SystemWindow {
             anchors.top: parent.top
             anchors.margins: 10
             onClicked: {
-                if(folderModel.parentFolder != "")
+                if(folderModel.parentFolder != ""){
                     folderModel.folder = folderModel.parentFolder;
+                    fileUrl=folderModel.folder
+                }
             }
         }
         //磁盘文件浏览器视图
@@ -119,6 +121,7 @@ SystemWindow {
                 onClicked: {
                     if(fileIsDir){
                         folderModel.folder = folderModel.get(index, "fileURL")
+                        fileUrl=folderModel.folder
                     }
                     else {
                         fileIndex = index;
@@ -129,6 +132,8 @@ SystemWindow {
                         console.log(filePath)
                         console.log(def.getFileSuffix(fileName), ":", fileName);
                     }
+
+
                 }
                 onDoubleClicked: {
                     if(!fileIsDir)  //是一个文件
@@ -153,6 +158,7 @@ SystemWindow {
             sortField: FolderListModel.Type
             onFolderChanged: {
                 console.log("current folder:", folderModel.folder)
+                fileUrl = folderModel.folder;
             }
             //            onStatusChanged: console.log("status:", folderModel.status);
         }

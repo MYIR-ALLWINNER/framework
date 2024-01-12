@@ -2,11 +2,19 @@ import QtQuick 2.7
 import QtQuick.Window 2.2
 import QtQuick.Controls 2.0
 import QtQuick.Layouts 1.3
+//import QtGraphicalEffects 1.0
+//import QtQml.Models 2.1
+import Qt.labs.settings 1.0
+
+//#02b9db home界面小图片背景色
 
 Rectangle {
     id:root
     color: "#00000000"
 
+    //    FontLoader { id: fixedFont; name: "Courier" }
+    //    FontLoader { id: localFont; source: "fonts/DIGITAL/DS-DIGIB.TTF" }
+    //    FontLoader { id: webFont; source: "http://www.princexml.com/fonts/steffmann/Starburst.ttf" }
     function fitWidth(text){
         return  fontMetrics.advanceWidth(text);
     }
@@ -54,6 +62,7 @@ Rectangle {
                 family_font_size = 30
                 app_font_size = 20
             }
+
         }
     }
 
@@ -66,6 +75,7 @@ Rectangle {
         anchors.top: parent.top;
         anchors.topMargin: 20
         color: "transparent";
+
         ListModel{
             id:viewModel;
             ListElement{
@@ -79,12 +89,14 @@ Rectangle {
                         aqml: "CameraWindow.qml"
                         acolor: "#02b9db"
                     },
+					/*
                     ListElement {
                         aimage:"qrc:/images/wvga/home/media_icon_video_nor.png"
                         application: qsTr("播放器")
                         aqml:"PlayerWindow.qml"
                         acolor:"#02b9db"
                     },
+					*/
                     ListElement {
                         aimage:"qrc:/images/wvga/home/icon_music.png"
                         application: qsTr("音乐")
@@ -154,15 +166,14 @@ Rectangle {
                 catalogue:"public"
                 cimage:"qrc:/images/fhd/home/homepage_public_nor.png"
                 cname: qsTr("公共服务")
-                subNode: [                    
-
+                subNode: [
                     ListElement {
                         aimage: "qrc:/images/wvga/home/public_icon_ticket_nor.png"
                         application: qsTr("取票机")
                         aqml: "TicketWindow.qml"
                         acolor: "#02b9db"
                     },
-					ListElement {
+                    ListElement {
                         aimage: "qrc:/images/wvga/public/charge_pile.png"
                         application: qsTr("充电桩")
                         aqml: "ChargeWindow.qml"
@@ -176,6 +187,7 @@ Rectangle {
                     }
                 ]
             }
+
         }
 
         Component{
@@ -277,6 +289,7 @@ Rectangle {
             path:Path{
                 startX:50;
                 startY:0;
+
                 PathAttribute{name:"zOrder";value:0}
                 PathAttribute{name:"itemScale";value:0.55}
                 PathAttribute{name:"iconAngle";value:-40}
@@ -307,6 +320,7 @@ Rectangle {
                 PathLine{
                     x:pathView.width-50;
                     y:0;
+
                 }
 
                 PathAttribute{name:"zOrder";value:0}
@@ -343,7 +357,16 @@ Rectangle {
                 height: Screen.desktopAvailableHeight/8.7
                 property bool isClickable: true
 
+                //                    anchors{
+                //                        fill:parent
+                //                        top: pointer.bottom
+                //                        horizontalCenter: subMenu.horizontalCenter
+                //                    }
+
                 Repeater{
+                    //                        anchors{
+                    //                            horizontalCenter: subMenu.horizontalCenter
+                    //                        }
                     model:{
                         var index = findIndex("multimedia")
                         console.log("index="+index)
@@ -395,6 +418,7 @@ Rectangle {
                                 color: "#dcdde4";
                                 font.family: "Microsoft YaHei";
                                 font.pixelSize: app_font_size;
+                                //                                    wrapMode: Text.Wrap;
                                 anchors{
                                     verticalCenter: parent.verticalCenter
                                     left: appicon.right
@@ -414,44 +438,82 @@ Rectangle {
                                 onClicked: {
                                     console.log("clicked:"+model.aqml + " " + subMenuRow.isClickable)
 
+                                    // 第一种方式加载
+                                    //                                        timer.start()
+                                    //                                        if(subMenuRow.isClickable === true){
+                                    //                                            var componet = Qt.createComponent(model.aqml);
+                                    //                                            if(componet.status === Component.Ready) {
+                                    //                                                var obj = componet.createObject(mainWnd)
+                                    //                                            }
+                                    //                                            obj.show()
+
+                                    //                                            isClickable.isSubShow = false;
+                                    //                                        }
+
                                     // 第二种方式加载
+									/*
                                     if(model.aqml === "PlayerWindow.qml"){
+                                        //                                            playerWnd.forceActiveFocus()
+                                        //                                            playerWnd.z=4;
                                         mainloader.source = "PlayerWindow.qml"
                                         mainloader.item.show()
                                         mainloader.item.requestActivate()
-                                    }else if(model.aqml === "CameraWindow.qml"){
+                                    }else 
+									*/
+									if(model.aqml === "CameraWindow.qml"){
+                                        //                                            cameraWnd.forceActiveFocus()
+                                        //                                            cameraWnd.z=4;
                                         mainloader.source = "CameraWindow.qml"
                                         mainloader.item.show()
                                         mainloader.item.requestActivate()
                                     }else if(model.aqml === "PictureWindow.qml"){
+                                        //                                            pictureWnd.forceActiveFocus()
+                                        //                                            pictureWnd.z=4;
                                         mainloader.source = "PictureWindow.qml"
                                         mainloader.item.show()
                                         mainloader.item.requestActivate()
                                     }else if(model.aqml === "TicketWindow.qml"){
+                                        //                                            ticketWnd.forceActiveFocus()
+                                        //                                            ticketWnd.z=4;
                                         mainloader.source = "TicketWindow.qml"
-                                        mainloader.item.open()
-                                        //mainloader.item.forceActiveFocus()
+                                        mainloader.item.show()
+                                        mainloader.item.requestActivate()
                                     }else if(model.aqml === "ScopeWindow.qml"){
-                                        mainloader.source = "ScopeWindow.qml"  
+                                        //                                            scopeWnd.forceActiveFocus()
+                                        //                                            scopeWnd.z=4;
+                                        mainloader.source = "ScopeWindow.qml"
                                         mainloader.item.show()
                                         mainloader.item.requestActivate()
                                     }else if(model.aqml === "FileWindow.qml"){
+                                        //                                            fileWnd.forceActiveFocus()
+                                        //                                            fileWnd.z=4;
                                         mainloader.source = "FileWindow.qml"
                                         mainloader.item.show()
                                         mainloader.item.requestActivate()
                                     }else if(model.aqml === "WashWindow.qml"){
+                                        //                                            washWnd.forceActiveFocus()
+                                        //                                            washWnd.z=4;
                                         mainloader.source = "WashWindow.qml"
                                         mainloader.item.show()
                                         mainloader.item.requestActivate()
                                     }else if(model.aqml === "InfoWindow.qml"){
+                                        //                                            infoWnd.forceActiveFocus()
+                                        //                                            infoWnd.z=4;
                                         mainloader.source = "InfoWindow.qml"
                                         mainloader.item.show()
                                         mainloader.item.requestActivate()
                                     }else if(model.aqml === "SettingsWindow.qml"){
+                                        //                                            settingsWnd.forceActiveFocus()
+                                        //                                            settingsWnd.z=4;
                                         mainloader.source = "SettingsWindow.qml"
                                         mainloader.item.show()
                                         mainloader.item.requestActivate()
+                                        ////                                            settingsWnd.source="SettingsWindow.qml"
+                                        //                                            settingsWnd.item.show()
+                                        //                                            settingsWnd.item.requestActivate()
                                     }else if(model.aqml === "MusicWindow.qml"){
+                                        //                                            settingsWnd.forceActiveFocus()
+                                        //                                            settingsWnd.z=4;
                                         mainloader.source = "MusicWindow.qml"
                                         mainloader.item.show()
                                         mainloader.item.requestActivate()
@@ -465,7 +527,12 @@ Rectangle {
                                         mainloader.source="WinAppearance.qml"
                                         mainloader.item.open()
                                         mainloader.item.forceActiveFocus()
-                                    }
+                                    }/*else if(model.aqml === "BrowserWindow.qml"){
+//                                              browserWnd.forceActiveFocus()
+//                                              browserWnd.z=4;
+                                              browserWnd.item.show()
+                                              browserWnd.item.requestActivate()
+                                        }*/
                                 }
 
                                 Timer{
@@ -479,7 +546,9 @@ Rectangle {
                             }
                         }
                     }
+
                 }
+
             }
         }
 
@@ -507,31 +576,167 @@ Rectangle {
             }
 
             onCurrentIndexChanged: {
+                //                    timer.running=false;
+                //                    timer.running=true;
                 console.log("currentIndexChanged:"+ currentIndex)
             }
         }
 
+        //            //Timer
+        //            Timer{
+        //                id:timer;
+        //                interval: 7500;
+        //                repeat: true;
+        //                running: false;
+        //                onTriggered: {
+        //                    pageIndicator.currentIndex=(pageIndicator.currentIndex+1)%(pathView.count);
+        //                }
+        //            }
 
-        HomeButton {
-            text: qsTr("toMENU")
-            label.visible: false
-            source:"images/wvga/home/home.png"
-            //        width: 30
-            //        height: 30
-            glowRadius: 20
-            //        z: 2
+        //            Component.onCompleted: {
+        //                timer.running=true;
+        //            }
+    }
 
-            anchors {
-                horizontalCenter: parent.horizontalCenter
-                top: pathViewRect.bottom
-                topMargin: -5
-                //bottom: parent.bottom
-                //bottomMargin: 10
-            }
 
-            onClicked: {
-                mainWnd.chooseWnd("MENU")
-            }
+    HomeButton {
+        text: qsTr("toMENU")
+        label.visible: false
+        source:"images/wvga/home/home.png"
+        //        width: 30
+        //        height: 30
+        glowRadius: 20
+        //        z: 2
+
+        Settings{
+            id:settings
+            property var agingsrc: "aging/aging.qml"
         }
+
+        anchors {
+            horizontalCenter: parent.horizontalCenter
+            bottom: parent.bottom
+            bottomMargin: height * 0.5
+        }
+
+        onClicked: {
+            mainWnd.chooseWnd("MENU")
+        }
+
+        onLongpressed: {
+            mainloader.source="aging/aging.qml"
+            mainloader.item.show()
+            mainloader.item.requestActivate()
+        }
+
+        //    Component.onCompleted: {
+        ////1
+        //        addModelData(
+        //                    "multimedia",
+        //                    "qrc:/images/fhd/home/homepage_media_nor.png",
+        //                    qsTr("多媒体"),qsTr("摄像头"),
+        //                    "qrc:/images/wvga/home/media_icon_camera_nor.png",
+        //                    "CameraWindow.qml",
+        //                    "#02b9db"
+        //                    )
+        ////2
+        //        addModelData(
+        //                    "multimedia",
+        //                    "qrc:/images/fhd/home/homepage_media_nor.png",
+        //                    qsTr("多媒体"),qsTr("播放器"),
+        //                    "qrc:/images/wvga/home/media_icon_video_nor.png",
+        //                    "PlayerWindow.qml",
+        //                    "#02b9db"
+        //                    )
+        //        //3
+        //        addModelData(
+        //                    "system",
+        //                    "qrc:/images/fhd/home/homepage_system_nor.png",
+        //                    qsTr("系统"),
+        //                    qsTr("系统信息"),
+        //                    "qrc:/images/wvga/home/system_icon_info_nor.png",
+        //                    "InfoWindow.qml",
+        //                    "#02b9db"
+        //                    )
+        //        //4
+        //        addModelData(
+        //                    "system",
+        //                    "qrc:/images/fhd/home/homepage_system_nor.png",
+        //                    qsTr("系统"),
+        //                    qsTr("系统设置"),
+        //                    "qrc:/images/wvga/home/system_icon_set_nor.png",
+        //                    "SettingsWindow.qml",
+        //                    "#02b9db"
+        //                    )
+        //        //5
+        //        addModelData(
+        //                    "machine",
+        //                    "qrc:/images/fhd/home/homepage_machine_nor.png",
+        //                    qsTr("智能家电"),
+        //                    qsTr("洗衣机"),
+        //                    "qrc:/images/wvga/home/smart_icon_washing_nor.png",
+        //                    "WashWindow.qml",
+        //                    "#02b9db"
+        //                    )
+        //        //6
+        //        addModelData(
+        //                    "health",
+        //                    "qrc:/images/fhd/home/homepage_medical_nor.png",
+        //                    qsTr("卫生医疗"),
+        //                    qsTr("心电仪"),
+        //                    "qrc:/images/wvga/home/medical_icon_heart_nor.png",
+        //                    "ScopeWindow.qml",
+        //                    "#02b9db"
+        //                    )
+        //        //7
+        //        addModelData(
+        //                    "public",
+        //                    "qrc:/images/fhd/home/homepage_public_nor.png",
+        //                    qsTr("公共服务"),
+        //                    qsTr("取票机"),
+        //                    "qrc:/images/wvga/home/public_icon_ticket_nor.png",
+        //                    "TicketWindow.qml",
+        //                    "#02b9db"
+        //                    )
+        //        //8
+        //        addModelData(
+        //                    "system",
+        //                    "qrc:/images/fhd/home/homepage_system_nor.png",
+        //                    qsTr("系统"),
+        //                    qsTr("文件管理器"),
+        //                    "qrc:/images/wvga/home/media_icon_doc.png",
+        //                    "FileWindow.qml",
+        //                    "#02b9db"
+        //                    )
+        //        //9
+        //        addModelData(
+        //                    "multimedia",
+        //                    "qrc:/images/fhd/home/homepage_media_nor.png",
+        //                    qsTr("多媒体"),
+        //                    qsTr("Music"),
+        //                    "qrc:/images/wvga/home/icon_music.png",
+        //                    "MusicWindow.qml",
+        //                    "#02b9db"
+        //                    )
+        //        //10
+        //        addModelData(
+        //                    "multimedia",
+        //                    "qrc:/images/fhd/home/homepage_media_nor.png",
+        //                    qsTr("多媒体"),
+        //                    qsTr("图片"),
+        //                    "qrc:/images/wvga/home/media_icon_img_nor.png",
+        //                    "PictureWindow.qml",
+        //                    "#02b9db"
+        //                    )
+        ////        addModelData(
+        ////                    "browser",
+        ////                    "qrc:/images/wvga/home/homepage_media_nor.png",
+        ////                    qsTr("网络应用"),
+        ////                    qsTr("浏览器"),
+        ////                    "qrc:/images/wvga/home/media_icon_img_nor.png",
+        ////                    "BrowserWindow.qml",
+        ////                    "#02b9db"
+        ////                    )
+        //    }
     }
 }

@@ -170,7 +170,7 @@ SystemWindow {
         onClicked_delete: {
             var imgPath = folderModel.get(imageIndex, "filePath")
             myFunction.deleteFile(imgPath);
-            if(getImageCount() !== 0)
+            if(getImageCount() != 0)
                 previousImg()
             else
                 w_preview.close();

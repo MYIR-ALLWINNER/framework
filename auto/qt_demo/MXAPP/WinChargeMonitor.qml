@@ -40,10 +40,13 @@ Rectangle {
     property var flag: 0
     property var connect_flag: 0
     property var connect_count_back_flag: 0
+    property var start_flag: 0
+    property var stop_flag: 0
     signal closeAccount(var charge_time,var electricity,var charge_fee,var service_fee,var total_fee)
 
     onVisibleChanged: {
         if(root.visible==true){
+            start_flag = charge_manage_c.start_flag
             sign_init()
             connect_timer.start()
             if(charge_scheme.choose_scheme>1){
@@ -101,6 +104,7 @@ Rectangle {
             update_page_info()
         }
         else{
+            stop_flag = charge_manage_c.stop_flag
             connect_timer.stop()
             if(flag==1){
                 charging_info_timer.stop()
@@ -463,7 +467,7 @@ Rectangle {
                 horizontalAlignment: Text.AlignLeft
                 verticalAlignment: Text.AlignVCenter
                 font.family: "Microsoft YaHei"
-                font.pixelSize: 15
+                font.pointSize: 10
                 text: qsTr("")
             }
         }
@@ -501,7 +505,7 @@ Rectangle {
             verticalAlignment: Text.AlignVCenter
             horizontalAlignment: Text.AlignHCenter
             font.family: "Microsoft YaHei"
-            font.pixelSize: 35
+            font.pointSize: 18
             color: "white"
         }
         MouseArea{
@@ -668,7 +672,7 @@ Rectangle {
                 id:charge_state
                 visible: true
                 width: 0.5*parent.width
-                height: mainWnd.height > 500 ? 50 : 30
+                height: 0.2*parent.height
                 anchors.left: parent.left
                 anchors.top: parent.top
                 anchors.topMargin: mainWnd.height > 500 ? 10 : 5
@@ -679,7 +683,7 @@ Rectangle {
                     verticalAlignment: Text.AlignVCenter
                     color: "#71BBF8"
                     font.family: "Microsoft YaHei"
-                    font.pixelSize: mainWnd.height > 500 ? 25 : 15
+                    font.pointSize: mainWnd.height > 500 ? 18 : 8
                 }
             }
 
@@ -687,7 +691,7 @@ Rectangle {
                 id:charge_state_text
                 visible: true
                 width: 0.5*parent.width
-                height: mainWnd.height > 500 ? 50 : 30
+                height: 0.2*parent.height
                 anchors.left: charge_state.right
                 anchors.top: parent.top
                 anchors.topMargin: mainWnd.height > 500 ? 10 : 5
@@ -700,7 +704,7 @@ Rectangle {
                     horizontalAlignment: Text.AlignHCenter
                     verticalAlignment: Text.AlignVCenter
                     font.family: "Microsoft YaHei"
-                    font.pixelSize: mainWnd.height > 500 ? 25 : 15
+                    font.pointSize: mainWnd.height > 500 ? 18 : 8
                     font.underline: true
                     color: "white"
                 }
@@ -710,7 +714,7 @@ Rectangle {
                 id:charge_time_label
                 visible: true
                 width: 0.5*parent.width
-                height: mainWnd.height > 500 ? 50 : 30
+                height: 0.2*parent.height
                 anchors.left: parent.left
                 anchors.top: charge_state.bottom
                 anchors.topMargin: mainWnd.height > 500 ? 10 : 5
@@ -723,7 +727,7 @@ Rectangle {
                     verticalAlignment: Text.AlignVCenter
                     color: "#71BBF8"
                     font.family: "Microsoft YaHei"
-                    font.pixelSize: mainWnd.height > 500 ? 25 : 15
+                    font.pointSize: mainWnd.height > 500 ? 18 : 8
                 }
             }
 
@@ -731,7 +735,7 @@ Rectangle {
                 id:charge_time_text
                 visible: true
                 width: 0.5*parent.width
-                height: mainWnd.height > 500 ? 50 : 30
+                height: 0.2*parent.height
                 anchors.left: charge_time_label.right
                 anchors.top: charge_state_text.bottom
                 anchors.topMargin: 5
@@ -744,7 +748,7 @@ Rectangle {
                     horizontalAlignment: Text.AlignHCenter
                     verticalAlignment: Text.AlignVCenter
                     font.family: "Microsoft YaHei"
-                    font.pixelSize: mainWnd.height > 500 ? 25 : 15
+                    font.pointSize: mainWnd.height > 500 ? 18 : 8
                     font.underline: true
                     color: "white"
                 }
@@ -754,7 +758,7 @@ Rectangle {
                 id:charge_electricity
                 visible: true
                 width: 0.5*parent.width
-                height: mainWnd.height > 500 ? 50 : 30
+                height: 0.2*parent.height
                 anchors.left: parent.left
                 anchors.top: charge_time_label.bottom
                 anchors.topMargin: 5
@@ -766,7 +770,7 @@ Rectangle {
                     verticalAlignment: Text.AlignVCenter
                     color: "#71BBF8"
                     font.family: "Microsoft YaHei"
-                    font.pixelSize: mainWnd.height > 500 ? 25 : 15
+                    font.pointSize: mainWnd.height > 500 ? 18 : 8
                 }
             }
 
@@ -774,7 +778,7 @@ Rectangle {
                 id:charge_electricity_text
                 visible: true
                 width: 0.5*parent.width
-                height: mainWnd.height > 500 ? 50 : 30
+                height: 0.2*parent.height
                 anchors.left: charge_electricity.right
                 anchors.top: charge_time_label.bottom
                 anchors.topMargin: 5
@@ -787,7 +791,7 @@ Rectangle {
                     horizontalAlignment: Text.AlignHCenter
                     verticalAlignment: Text.AlignVCenter
                     font.family: "Microsoft YaHei"
-                    font.pixelSize: mainWnd.height > 500 ? 25 : 15
+                    font.pointSize: mainWnd.height > 500 ? 18 : 8
                     font.underline: true
                     color: "white"
                 }
@@ -907,11 +911,11 @@ Rectangle {
         Label{
             id:soc_label
             visible: true
-            height: mainWnd.height > 500 ? 50 : 30
-            width: 0.1*parent.width
+            height: 0.1*parent.height
+            width: 0.15*parent.width
             anchors.top: parent.top
             anchors.left: parent.left
-            anchors.leftMargin: 0.1*parent.width
+            anchors.leftMargin: 0.05*parent.width
             anchors.topMargin: mainWnd.height > 500 ? 20 : 10
 
             Text {
@@ -924,14 +928,14 @@ Rectangle {
                 verticalAlignment: Text.AlignVCenter
                 color: "#71BBF8"
                 font.family: "Microsoft YaHei"
-                font.pixelSize: mainWnd.height > 500 ? 25 : 15
+                font.pointSize: mainWnd.height > 500 ? 18 : 8
             }
         }
 
         Rectangle{
             id:soc_text
             visible: true
-            height: mainWnd.height > 500 ? 50 : 30
+            height: 0.1*parent.height
             width: 0.1*parent.width
             anchors.top: parent.top
             anchors.left: soc_label.right
@@ -943,7 +947,7 @@ Rectangle {
                 anchors.fill: parent
                 color: "white"
                 font.family: "Microsoft YaHei"
-                font.pixelSize: mainWnd.height > 500 ? 25 : 15
+                font.pointSize: mainWnd.height > 500 ? 18 : 8
                 font.underline: true
                 horizontalAlignment: Text.AlignHCenter
                 verticalAlignment: Text.AlignVCenter
@@ -955,11 +959,11 @@ Rectangle {
         Label{
             id:page_info_one_label
             visible: true
-            width: 0.1*parent.width
-            height: mainWnd.height > 500 ? 50 : 30
+            width: 0.15*parent.width
+            height: 0.1*parent.height
             anchors.left: parent.left
             anchors.top: soc_label.bottom
-            anchors.leftMargin: 0.1*parent.width
+            anchors.leftMargin: 0.05*parent.width
             anchors.topMargin: mainWnd.height > 500 ? 20 : 10
 
             Text {
@@ -971,7 +975,7 @@ Rectangle {
                 verticalAlignment: Text.AlignVCenter
                 color: "#71BBF8"
                 font.family: "Microsoft YaHei"
-                font.pixelSize: mainWnd.height > 500 ? 25 : 15
+                font.pointSize: mainWnd.height > 500 ? 18 : 8
             }
         }
 
@@ -979,7 +983,7 @@ Rectangle {
             id:page_info_one_text
             visible: true
             width: 0.1*parent.width
-            height: mainWnd.height > 500 ? 50 : 30
+            height: 0.1*parent.height
             anchors.left: page_info_one_label.right
             anchors.top: soc_label.bottom
             anchors.topMargin: mainWnd.height > 500 ? 20 : 10
@@ -993,7 +997,7 @@ Rectangle {
                 horizontalAlignment: Text.AlignHCenter
                 verticalAlignment: Text.AlignVCenter
                 font.family: "Microsoft YaHei"
-                font.pixelSize: mainWnd.height > 500 ? 25 : 15
+                font.pointSize: mainWnd.height > 500 ? 18 : 8
                 font.underline: true
             }
         }
@@ -1002,11 +1006,11 @@ Rectangle {
         Label{
             id:page_info_two_label
             visible: true
-            width: 0.1*parent.width
-            height: mainWnd.height > 500 ? 50 : 30
+            width: 0.15*parent.width
+            height: 0.1*parent.height
             anchors.left: page_info_one_text.right
             anchors.top: soc_label.bottom
-            anchors.leftMargin: 0.1*parent.width
+            anchors.leftMargin: 0.05*parent.width
             anchors.topMargin: mainWnd.height > 500 ? 20 : 10
 
             Text {
@@ -1018,7 +1022,7 @@ Rectangle {
                 verticalAlignment: Text.AlignVCenter
                 color: "#71BBF8"
                 font.family: "Microsoft YaHei"
-                font.pixelSize: mainWnd.height > 500 ? 25 : 15
+                font.pointSize: mainWnd.height > 500 ? 18 : 8
             }
         }
 
@@ -1026,7 +1030,7 @@ Rectangle {
             id:page_info_two_text
             visible: true
             width: 0.1*parent.width
-            height: mainWnd.height > 500 ? 50 : 30
+            height: 0.1*parent.height
             anchors.left: page_info_two_label.right
             anchors.top: soc_label.bottom
             anchors.topMargin: mainWnd.height > 500 ? 20 : 10
@@ -1040,7 +1044,7 @@ Rectangle {
                 horizontalAlignment: Text.AlignHCenter
                 verticalAlignment: Text.AlignVCenter
                 font.family: "Microsoft YaHei"
-                font.pixelSize: mainWnd.height > 500 ? 25 : 15
+                font.pointSize: mainWnd.height > 500 ? 18 : 8
                 font.underline: true
             }
         }
@@ -1049,11 +1053,11 @@ Rectangle {
         Label{
             id:page_info_three_label
             visible: true
-            width: 0.1*parent.width
-            height: mainWnd.height > 500 ? 50 : 30
+            width: 0.15*parent.width
+            height: 0.1*parent.height
             anchors.left: page_info_two_text.right
             anchors.top: soc_label.bottom
-            anchors.leftMargin: 0.1*parent.width
+            anchors.leftMargin: 0.05*parent.width
             anchors.topMargin: mainWnd.height > 500 ? 20 : 10
 
             Text {
@@ -1065,7 +1069,7 @@ Rectangle {
                 verticalAlignment: Text.AlignVCenter
                 color: "#71BBF8"
                 font.family: "Microsoft YaHei"
-                font.pixelSize: mainWnd.height > 500 ? 25 : 15
+                font.pointSize: mainWnd.height > 500 ? 18 : 8
             }
         }
 
@@ -1073,7 +1077,7 @@ Rectangle {
             id:page_info_three_text
             visible: true
             width: 0.1*parent.width
-            height: mainWnd.height > 500 ? 50 : 30
+            height: 0.1*parent.height
             anchors.left: page_info_three_label.right
             anchors.top: soc_label.bottom
             anchors.topMargin: mainWnd.height > 500 ? 20 : 10
@@ -1087,7 +1091,7 @@ Rectangle {
                 horizontalAlignment: Text.AlignHCenter
                 verticalAlignment: Text.AlignVCenter
                 font.family: "Microsoft YaHei"
-                font.pixelSize: mainWnd.height > 500 ? 25 : 15
+                font.pointSize: mainWnd.height > 500 ? 18 : 8
                 font.underline: true
             }
         }
@@ -1096,11 +1100,11 @@ Rectangle {
         Label{
             id:page_info_four_label
             visible: true
-            width: 0.1*parent.width
-            height: mainWnd.height > 500 ? 50 : 30
+            width: 0.15*parent.width
+            height: 0.1*parent.height
             anchors.left: parent.left
             anchors.top: page_info_one_label.bottom
-            anchors.leftMargin: 0.1*parent.width
+            anchors.leftMargin: 0.05*parent.width
             anchors.topMargin: mainWnd.height > 500 ? 20 : 10
 
             Text {
@@ -1112,7 +1116,7 @@ Rectangle {
                 verticalAlignment: Text.AlignVCenter
                 color: "#71BBF8"
                 font.family: "Microsoft YaHei"
-                font.pixelSize: mainWnd.height > 500 ? 25 : 15
+                font.pointSize: mainWnd.height > 500 ? 18 : 8
             }
         }
 
@@ -1120,7 +1124,7 @@ Rectangle {
             id:page_info_four_text
             visible: true
             width: 0.1*parent.width
-            height: mainWnd.height > 500 ? 50 : 30
+            height: 0.1*parent.height
             anchors.left: page_info_four_label.right
             anchors.top: page_info_one_label.bottom
             anchors.topMargin: mainWnd.height > 500 ? 20 : 10
@@ -1134,7 +1138,7 @@ Rectangle {
                 horizontalAlignment: Text.AlignHCenter
                 verticalAlignment: Text.AlignVCenter
                 font.family: "Microsoft YaHei"
-                font.pixelSize: mainWnd.height > 500 ? 25 : 15
+                font.pointSize: mainWnd.height > 500 ? 18 : 8
                 font.underline: true
             }
         }
@@ -1142,11 +1146,10 @@ Rectangle {
         Label{
             id:page_info_five_label
             visible: true
-            width: 0.1*parent.width
-            height: mainWnd.height > 500 ? 50 : 30
-            anchors.left: page_info_four_text.right
+            width: 0.15*parent.width
+            height: 0.1*parent.height
+            anchors.left: page_info_two_label.left
             anchors.top: page_info_one_label.bottom
-            anchors.leftMargin: 0.1*parent.width
             anchors.topMargin: mainWnd.height > 500 ? 20 : 10
 
             Text {
@@ -1158,7 +1161,7 @@ Rectangle {
                 verticalAlignment: Text.AlignVCenter
                 color: "#71BBF8"
                 font.family: "Microsoft YaHei"
-                font.pixelSize: mainWnd.height > 500 ? 25 : 15
+                font.pointSize: mainWnd.height > 500 ? 18 : 8
             }
         }
 
@@ -1166,7 +1169,7 @@ Rectangle {
             id:page_info_five_text
             visible: true
             width: 0.1*parent.width
-            height: mainWnd.height > 500 ? 50 : 30
+            height: 0.1*parent.height
             anchors.left: page_info_five_label.right
             anchors.top: page_info_one_label.bottom
             anchors.topMargin: mainWnd.height > 500 ? 20 : 10
@@ -1180,7 +1183,7 @@ Rectangle {
                 horizontalAlignment: Text.AlignHCenter
                 verticalAlignment: Text.AlignVCenter
                 font.family: "Microsoft YaHei"
-                font.pixelSize: mainWnd.height > 500 ? 25 : 15
+                font.pointSize: mainWnd.height > 500 ? 18 : 8
                 font.underline: true
             }
         }

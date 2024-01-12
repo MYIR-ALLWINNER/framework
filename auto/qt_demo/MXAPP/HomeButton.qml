@@ -1,4 +1,4 @@
-import QtQuick 2.0
+import QtQuick 2.9
 import QtQuick.Controls 2.0
 import QtQuick.Layouts 1.3
 
@@ -6,6 +6,7 @@ Image {
     id: hBtn
     source:"images/wvga/home/home.png"
     signal clicked()
+    signal longpressed()
 
     property bool clickable : true
     property int duration: 250
@@ -15,6 +16,13 @@ Image {
 
     MouseArea{
         anchors.fill: parent
+        pressAndHoldInterval: 5000
+        onPressAndHold: {
+            if(hBtn.clickable){
+                hBtn.longpressed();
+            }
+        }
+
         onClicked: {
             if(hBtn.clickable){
                 hBtn.clicked()

@@ -77,7 +77,7 @@ unix:!macx: LIBS += -L$$PWD/$$LIBSDK_PATH/ -L$$PWD/$$LIBSDK_PATH/libs/ -lsdk_com
 -L../../../../tools/pack/chips/$$(LICHEE_CHIP)/hal/gpu/fbdev/lib/ \
                                         -L$$PWD/$$LIBSDK_PATH/cedarx/lib/ -Wl,--no-undefined   -lcdx_playback -lcdx_common -laencoder -lawrecorder -lxplayer   -lcdx_muxer \
 										-lvenc_h264 -lvenc_h265 -lvenc_base -lvenc_common -laftertreatment -lsbm -lscaledown -lfbm -lvenc_jpeg \
-             -lcdx_parser -lsubdecoder -lvideoengine -lvdecoder -lcdx_stream   -lvencoder -lVE   -lcdc_base -lMemAdapter -ladecoder -laencoder -lxmetadataretriever -lcdx_base \
+             -lcdx_parser -lsubdecoder -lvideoengine -lvdecoder -llive555 -lcdx_stream   -lvencoder -lVE   -lcdc_base -lMemAdapter -ladecoder -laencoder -lxmetadataretriever -lcdx_base \
 			 -lrt -lpthread -lz -lcrypto -lssl -ltinyalsa -lvenc_base -lcdx_ion -lasound
 
 INCLUDEPATH += 	$$PWD/$$LIBSDK_PATH \

@@ -38,6 +38,10 @@ else
 TOOLTRAIN_ERR_STRING = ""
 endif
 
+
+
+
+
 #LICHEE_BR_OUT=/home/xxx/t564/longan/out/t507/demo2.0/longan/buildroot
 #GCC=$LICHEE_BR_OUT/host/bin/aarch64-linux-gnu-gcc
 #OUT_GCC = `find ${LICHEE_BR_OUT} -perm /a+x -a -regex '.*-gcc'`
@@ -45,9 +49,14 @@ endif
 #OUT_STRIP = `find ${LICHEE_BR_OUT} -perm /a+x -a -regex '.*-strip'`
 SYSROOT = ${LICHEE_OUT_DIR}/${LICHEE_IC}/${LICHEE_BOARD}/${LICHEE_LINUX_DEV}/buildroot/host/bin/{LICHEE_CROSS_COMPILER}-gcc
 
+
+
+
 CC = ${LICHEE_CROSS_COMPILER}-gcc -g $(V)
 CPP = ${LICHEE_CROSS_COMPILER}-g++ -g $(V)
 STRIP = ${LICHEE_CROSS_COMPILER}-strip
+
+
 
 
 PATH1 := $(LICHEE_BR_OUT)/host/bin/:$(PATH)

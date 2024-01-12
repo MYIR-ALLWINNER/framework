@@ -20,9 +20,6 @@ public:
         sleep(1);
         QDir::setCurrent(app_path);
         system("./adl10-e_client");
-
-        while(1){
-        }
     }
 };
 
@@ -36,6 +33,8 @@ class ChargeManage : public QObject
     Q_PROPERTY(float power_factory READ get_power_factory)
     Q_PROPERTY(float voltage READ get_voltage)
     Q_PROPERTY(float current READ get_current)
+    Q_PROPERTY(int start_flag READ set_start)
+    Q_PROPERTY(int stop_flag READ set_stop)
 public:
     explicit ChargeManage(QObject *parent = nullptr);
     float start_quick_charging();
@@ -45,6 +44,8 @@ public:
     int get_power_factory();
     int get_voltage();
     int get_current();
+    int set_start();
+    int set_stop();
 signals:
 private:
     my_thread worker;

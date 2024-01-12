@@ -53,14 +53,16 @@
 #include <QtWidgets>
 #include <qabstractvideosurface.h>
 #include <qvideosurfaceformat.h>
+#include <QDebug>
 
 Q_LOGGING_CATEGORY(mlvc, "qt.multimedia.video")
 
 VideoWidgetSurface::VideoWidgetSurface(QQuickPaintedItem *item, QObject *parent)
     : QAbstractVideoSurface(parent)
     , item(item)
-    , imageFormat(QImage::Format_RGB32)
+    , imageFormat(QImage::Format_RGB888)
 {
+
 }
 
 QList<QVideoFrame::PixelFormat> VideoWidgetSurface::supportedPixelFormats(
@@ -68,6 +70,7 @@ QList<QVideoFrame::PixelFormat> VideoWidgetSurface::supportedPixelFormats(
 {
     if (handleType == QAbstractVideoBuffer::NoHandle) {
         return QList<QVideoFrame::PixelFormat>()
+				<< QVideoFrame::Format_RGB24
                 << QVideoFrame::Format_RGB32
                 << QVideoFrame::Format_ARGB32
                 << QVideoFrame::Format_ARGB32_Premultiplied
@@ -105,6 +108,7 @@ void VideoWidgetSurface::stop()
 
 bool VideoWidgetSurface::present(const QVideoFrame &frame)
 {
+	//qDebug()<<"present";
     if (surfaceFormat().pixelFormat() != frame.pixelFormat()
             || surfaceFormat().frameSize() != frame.size()) {
         setError(IncorrectFormatError);
@@ -122,7 +126,7 @@ bool VideoWidgetSurface::present(const QVideoFrame &frame)
 void VideoWidgetSurface::paint(QPainter *painter)
 {
     QMutexLocker lock(&m_frameMutex);
-
+	//qDebug()<<"paint";
     bool isFrameModified = false;
     if (m_frameChanged) {
     qCDebug(mlvc)  << "==========frame changed =========";
@@ -162,6 +166,7 @@ void VideoWidgetSurface::paint(QPainter *painter)
 
         if (m_frameChanged) {
         qCDebug(mlvc)  << "==== show frame===========";
+		//qDebug()<<"==== show frame===========";
             {
                 if (m_frame.map(QAbstractVideoBuffer::ReadOnly)) {
                     const QTransform oldTransform = painter->transform();
@@ -170,13 +175,17 @@ void VideoWidgetSurface::paint(QPainter *painter)
                        painter->scale(1, -1);
                        painter->translate(0, - item->height());
                     }
-
+					
+					//qDebug()<<"m_frame.bits:"<<m_frame.bits();
+					//qDebug()<<"m_frame.width:"<<m_frame.width();
+					//qDebug()<<"m_frame.height:"<<m_frame.height();
+					//qDebug()<<"m_frame.bytesPerLine:"<<m_frame.bytesPerLine();
                     QImage image(
                             m_frame.bits(),
                             m_frame.width(),
                             m_frame.height(),
                             m_frame.bytesPerLine(),
-                            QImage::Format_RGB32);
+                            QImage::Format_RGB888);
     //              QImage image(":/background-dark.png");
                     painter->drawImage(item->boundingRect(), image);
                     m_frame.unmap();
@@ -191,11 +200,13 @@ void VideoWidgetSurface::paint(QPainter *painter)
 void VideoWidgetSurface::appendFilter(QAbstractVideoFilter *filter)
 {
     QMutexLocker lock(&m_frameMutex);
+	qDebug()<<"appendFilter";
     m_filters.append(Filter(filter));
 }
 
 void VideoWidgetSurface::clearFilters()
 {
     QMutexLocker lock(&m_frameMutex);
+	qDebug()<<"clearFilters";
     m_filters.clear();
 }

@@ -117,7 +117,7 @@ Rectangle {
                 horizontalAlignment: Text.AlignLeft
                 verticalAlignment: Text.AlignVCenter
                 font.family: "Microsoft YaHei"
-                font.pixelSize: 15
+                font.pointSize: 10
                 text: qsTr("")
             }
         }
@@ -155,7 +155,7 @@ Rectangle {
             verticalAlignment: Text.AlignVCenter
             horizontalAlignment: Text.AlignHCenter
             font.family: "Microsoft YaHei"
-            font.pixelSize: 30
+            font.pointSize: 18
             color: "white"
         }
 
@@ -205,7 +205,7 @@ Rectangle {
             text: qsTr("姓名:许梦燃")+"\t"+qsTr("余额:")+String((home_screen.amount).toFixed(2))
             color: "white"
             font.family: "Microsoft YaHei"
-            font.pixelSize: 20
+            font.pointSize: 12
         }
     }
 
@@ -250,7 +250,7 @@ Rectangle {
                 verticalAlignment: Text.AlignVCenter
 
                 font.family: "Microsoft YaHei"
-                font.pixelSize: mainWnd.height > 500 ? 35 : 25
+                font.pointSize: mainWnd.height > 500 ? 25 : 12
                 color: "white"
             }
         }
@@ -317,7 +317,7 @@ Rectangle {
                 text: qsTr("支付成功")
                 color: "white"
                 font.family: "Microsoft YaHei"
-                font.pixelSize: mainWnd.height > 500 ? 45 : 30
+                font.pointSize: mainWnd.height > 500 ? 40 : 25
                 horizontalAlignment: Text.AlignHCenter
                 verticalAlignment: Text.AlignVCenter
             }
@@ -340,14 +340,14 @@ Rectangle {
                 anchors.left: wechat_pay.right
                 text: qsTr("微信/")
                 font.family: "Microsoft YaHei"
-                font.pixelSize: mainWnd.height > 500 ? 30 : 15
+                font.pointSize: mainWnd.height > 500 ? 18 : 8
                 color: "white"
             }
 
             Image {
                 id: ali_pay
                 visible: true
-                height: 30
+                height: mainWnd.height > 500 ? 50 : 30
                 width: height
                 anchors.top: parent.top
                 anchors.left: wechat_pay_text.right
@@ -363,7 +363,7 @@ Rectangle {
 
                 text: qsTr("支付宝")
                 font.family: "Microsoft YaHei"
-                font.pixelSize: mainWnd.height > 500 ? 30 : 15
+                font.pointSize: mainWnd.height > 500 ? 18 : 8
                 color: "white"
             }
 
@@ -376,7 +376,7 @@ Rectangle {
 
                 text: qsTr("APP扫码支付")
                 font.family: "Microsoft YaHei"
-                font.pixelSize: mainWnd.height > 500 ? 30 : 15
+                font.pointSize: mainWnd.height > 500 ? 18 : 8
                 color: "white"
             }
         }

@@ -30,6 +30,7 @@
 #define MAX_ADAS_SIZE (1920*1080*3/2)
 
 #define ENABLE_DEBUG_CAP_TIMEOUT 0
+#define CDX_FOR_PURE_H264
 
 #if ENABLE_DEBUG_CAP_TIMEOUT
 long long cap_base_time = 0;
@@ -615,6 +616,10 @@ status_t V4L2CameraDevice::startDevice(int width, int height, uint32_t pix_fmt, 
 
     // v4l2 request buffers
     int buf_cnt = NB_BUFFER;
+	if(mCameraType == CAMERA_TYPE_UVC) {
+        mV4l2_memory = V4L2_MEMORY_MMAP;
+    }
+	
     CHECK_NO_ERROR(v4l2ReqBufs(&buf_cnt));
     mBufferCnt = buf_cnt;
     mCurAvailBufferCnt = mBufferCnt;
@@ -1091,6 +1096,7 @@ bool V4L2CameraDevice::captureThread()
             || (mCaptureFormat == V4L2_PIX_FMT_H264))) {
         v4l2_buf.addrVirY = mVideoBuffer.buf_vir_addr[buf.index];
         v4l2_buf.addrPhyY = mVideoBuffer.buf_phy_addr[buf.index];
+		v4l2_buf.dmafd = mVideoBuffer.dma_fd[buf.index];
         v4l2_buf.width = mFrameWidth;
         v4l2_buf.height = mFrameHeight;
     } else {

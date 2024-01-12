@@ -11,8 +11,8 @@ Popup {
     closePolicy: Popup.NoAutoClose
     property int adaptive_width: Screen.desktopAvailableWidth
     property int adaptive_height: Screen.desktopAvailableHeight
-    width: mainWnd.width
-    height: mainWnd.height
+    width: Screen.desktopAvailableWidth
+    height: Screen.desktopAvailableHeight
 
 //    FontLoader { id: bahnschriftFont; source: "qrc:/fonts/Bahnschrift.ttf" }
 
@@ -311,7 +311,7 @@ Popup {
                      anchors.horizontalCenter: parent.horizontalCenter
                      anchors.margins: adaptive_height/48
                      anchors.top: img3.bottom
-                     text: qsTr("www.myir-tech.com")
+                     text: qsTr("www.myir.cn")
                      horizontalAlignment: Text.AlignHCenter
                      color: "#dcdde4";
                      font.family: "Microsoft YaHei";//bahnschriftFont.name;//
@@ -353,7 +353,7 @@ Popup {
                      anchors.left: img4.right
                      anchors.margins: adaptive_height/48
                      anchors.top: txt41.bottom
-                     text: qsTr("sales.cn@myirtech.com")
+                     text: qsTr("sales.cn@myir.cn")
                      horizontalAlignment: Text.AlignHCenter
                      color: "#dcdde4";
                      font.family: "Microsoft YaHei";//bahnschriftFont.name;//
@@ -366,7 +366,7 @@ Popup {
                      anchors.left: img4.right
                      anchors.margins: adaptive_height/48
                      anchors.top: txt42.bottom
-                     text: qsTr("project@myirtech.com")
+                     text: qsTr("project@myir.cn")
                      horizontalAlignment: Text.AlignHCenter
                      color: "#dcdde4";
                      font.family: "Microsoft YaHei";//bahnschriftFont.name;//
@@ -409,7 +409,7 @@ Popup {
                      anchors.left: img5.right
                      anchors.margins: adaptive_height/48
                      anchors.top: txt51.bottom
-                     text: qsTr("support.cn@myirtech.com")
+                     text: qsTr("support.cn@myir.cn")
                      horizontalAlignment: Text.AlignHCenter
                      color: "#dcdde4";
                      font.family: "Microsoft YaHei";//bahnschriftFont.name;//

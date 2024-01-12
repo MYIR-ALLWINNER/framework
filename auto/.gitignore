@@ -24,9 +24,12 @@ sdk_demo/csitest/csitestT113_ptr
 sdk_demo/lcd_bright/lcdbright
 sdk_lib/cedarx/include/libcedarc/include/Android.bp
 
+sdk_demo/bin/*
+!aw_player_lcd.sh
+!aw_player_lcd_tv.sh
+!aw_player_tv.sh
 sdk_demo/*/*.o
 sdk_lib/libs/libsdk_*.so
-!libsimpleini.so
 !libsdk_player.so
 !libsdk_gifdecoder.so
 !libsdk_g2d.so

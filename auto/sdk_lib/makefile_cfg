@@ -47,6 +47,10 @@ CC = ${LICHEE_CROSS_COMPILER}-gcc -g $(V)
 CPP = ${LICHEE_CROSS_COMPILER}-g++ -g $(V)
 STRIP = ${LICHEE_CROSS_COMPILER}-strip
 
+
+
+
+
 PATH1 := $(LICHEE_BR_OUT)/host/bin/:$(PATH)
 PATH = $(PATH1)
 export $(PATH)
