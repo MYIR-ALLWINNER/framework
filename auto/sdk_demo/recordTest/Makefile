@@ -13,7 +13,7 @@ CEDAR_MACORS = -D_GNU_SOURCE -DCONFIG_CHIP=7 -DCONFIG_TARGET_PRODUCT= -DCONFIG_P
 
 LIBS = -L$(SDK_PATH)/libs -lsdk_compose -lsdk_disp -lsdk_g2d -lsdk_dvr -lsdk_player \
 		 -lsdk_log -lsdk_camera -lsdk_memory -lsdk_sound -lsdk_storage \
-                -lsdk_audenc -lsdk_cfg -lsdk_ctrl -lsdk_misc -lasound -lrt -lpthread -lz -lcrypto -lssl
+                -lsdk_audenc -lsdk_cfg -lsdk_ctrl -lsdk_misc -lasound -lrt -lpthread -lz -lcrypto -lssl -llive555
 		 
 #LIBS +=  $(LICHEE_BR_OUT)/host/aarch64-buildroot-linux-gnu/sysroot/usr/lib/libmali.so
 

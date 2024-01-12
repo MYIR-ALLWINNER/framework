@@ -17,7 +17,7 @@ LDFLAGS = -L$(SDK_PATH) -L$(SDK_PATH)/libs/ -L$(SDK_PATH)/cedarx/lib/
 
 CEDAR_LINK_NEW = -L$(SDK_PATH)/cedarx/lib/ -Wl,--no-undefined -ladecoder -laencoder -lcdx_base -lcdx_common \
 	-lcdx_muxer -lcdx_parser -lcdx_playback -lcdx_stream -lMemAdapter -lcdc_base -lsubdecoder -lvdecoder \
-	-lvencoder -lVE -lvideoengine -lxmetadataretriever -lxplayer -lasound -lvenc_base -lvenc_codec -lcdx_ion
+	-lvencoder -lVE -lvideoengine -lxmetadataretriever -lxplayer -lasound -lvenc_base -lvenc_codec -lcdx_ion -llive555
 
 CEDAR_MACORS = -D_GNU_SOURCE -DCONFIG_CHIP=7 -DCONFIG_TARGET_PRODUCT= -DCONFIG_PRODUCT=2 \
 				-DCONFIG_VE_IPC=1 -DROTATE_PIC_HW=0 -DVE_PHY_OFFSET=0x40000000 -DCONFIG_LOG_LEVEL=0

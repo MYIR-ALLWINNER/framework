@@ -17,7 +17,7 @@ LDFLAGS = -L$(SDK_PATH) -L$(SDK_PATH)/libs/ -L$(SDK_PATH)/cedarx/lib/
 CEDAR_MACORS = -D_GNU_SOURCE -DCONFIG_CHIP=7 -DCONFIG_TARGET_PRODUCT= -DCONFIG_PRODUCT=2 \
 				-DCONFIG_VE_IPC=1 -DROTATE_PIC_HW=0 -DVE_PHY_OFFSET=0x40000000 -DCONFIG_LOG_LEVEL=0 
 
-LIBS += -lMemAdapter  -lVE -lcdc_base -lvideoengine -lcdx_common -lcdx_base -lsdk_memory -lsdk_disp -lsdk_log -lcdx_ion
+LIBS += -lMemAdapter  -lVE -lcdc_base -lvideoengine -lcdx_common -lcdx_base -lsdk_memory -lsdk_disp -lsdk_log -lcdx_ion -llive555
 
 all: $(Target)
 

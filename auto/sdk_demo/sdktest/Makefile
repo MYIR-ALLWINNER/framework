@@ -10,7 +10,7 @@ SDK_PATH = ../../sdk_lib
 
 CEDAR_LINK_NEW = -L$(SDK_PATH)/cedarx/lib/ -Wl,--no-undefined -ladecoder -laencoder -lcdx_base -lcdx_common \
 	-lcdx_muxer -lcdx_parser -lcdx_playback -lcdx_stream -lMemAdapter -lcdc_base -lsubdecoder -lvdecoder \
-	-lvencoder -lVE -lvideoengine -lxmetadataretriever -lxplayer -lvenc_base -lvenc_codec -lcdx_ion	-lasound \
+	-lvencoder -lVE -lvideoengine -lxmetadataretriever -lxplayer -lvenc_base -lvenc_codec -lcdx_ion	-lasound -llive555  \
 	-lvenc_common -lvenc_h264 -lvenc_h265 -lvenc_jpeg -lsbm -laftertreatment -lscaledown -lfbm
 
 CEDAR_MACORS = -D_GNU_SOURCE -DCONFIG_CHIP=7 -DCONFIG_TARGET_PRODUCT= -DCONFIG_PRODUCT=2 \
