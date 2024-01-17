@@ -254,7 +254,7 @@ SystemWindow {
                     }
                     Text{
                         id:battery_power_value
-                        text: "null"
+                        text: "100%"
                         font.pixelSize: 10;
                         font.family: "Microsoft YaHei"
                         color: "white"
@@ -281,7 +281,7 @@ SystemWindow {
                     }
                     Text{
                         id:create_value
-                        text: qsTr("Yocto")
+                        text: qsTr("yocto")
                         font.pixelSize: 10;
                         font.family: "Microsoft YaHei"
                         color: "white"

@@ -1,10 +1,12 @@
 import QtQuick 2.0
 import QtMultimedia 5.9
-import QtQuick.Dialogs 1.2
+import QtQuick.Dialogs 1.3
 import Qt.labs.folderlistmodel 2.2
-import QtQuick.Controls 2.2
+import QtQuick.Controls 2.3
 import QtQuick.Layouts 1.3
+
 import mvideooutput 1.0
+
 SystemWindow {
     id: root
     width: def.win_width
@@ -21,15 +23,12 @@ SystemWindow {
 //    property bool showFlag: false
 //    onAboutToHide: showFlag = false
     onVisibleChanged: {
-        if(showFlag == false){
+        if(showFlag == false)
+        {
             showFlag = true;
+//            console.log("视频窗口被激活")
             setVideoPath(def.videoDefaultLocation)
         }
-		else if(showFlag==true){
-			showFlag=false
-			videoStop()
-			video.source=""
-		}
     }
 
     Define {
@@ -49,8 +48,7 @@ SystemWindow {
 
     //视频输出到背景
     MVideoOutput {
-        //anchors.fill: parent        //充满背景
-        anchors.centerIn: parent  //center
+        anchors.fill: parent        //充满背景
         source: video
     }
 
@@ -136,11 +134,11 @@ SystemWindow {
     }
     function videoStop()
     {
-        //videoSwitchFlag = true;
+        videoSwitchFlag = true;
         player.playing = false;
         player.media_postion = 0;
         video.stop();
-        //videoSwitchFlag = false;
+        videoSwitchFlag = false;
     }
     function videoStepForward()
     {
@@ -157,7 +155,7 @@ SystemWindow {
         videoIndex -= 1;
         if(videoIndex < 0)
             videoIndex = getVideoCount()-1;//-1->4
-		video.source = ""
+
         video.source = getVideoURL(videoIndex)
         console.log("上一曲:" + (videoIndex+1) + "/"  + getVideoCount() + ":" + video.source);
         videoPlay();
@@ -166,25 +164,14 @@ SystemWindow {
     function videoForward()
     {
         videoSwitchFlag = true;
+        videoStop();
         videoIndex += 1;
-        if(videoIndex === getVideoCount() && getVideoCount()>1){   //0-4, 5
+        if(videoIndex == getVideoCount())    //0-4, 5
             videoIndex = 0;  //4->0
-            videoStop();
-            video.source = getVideoURL(videoIndex)
-            console.log("下一曲:" + (videoIndex+1) + "/"  + getVideoCount() + ":" + video.source);
-            videoPlay();
-            videoSwitchFlag = false;
-        }
-        else if(videoIndex === getVideoCount() && getVideoCount()===1){
-            videoIndex = 0;  //4->0
-            videoStop();
-			//video.seek(0);
-            video.source = ""
-            video.source = getVideoURL(videoIndex)
-            console.log("下一曲:" + (videoIndex+1) + "/"  + getVideoCount() + ":" + video.source);
-            videoPlay();
-            videoSwitchFlag = false;
-        }
+        video.source = getVideoURL(videoIndex)
+        console.log("下一曲:" + (videoIndex+1) + "/"  + getVideoCount() + ":" + video.source);
+        videoPlay();
+        videoSwitchFlag = false;
     }
 
     //暂停时，视频中央显示的大按钮
@@ -283,18 +270,16 @@ SystemWindow {
         onAccepted: {
             videoSwitchFlag = true;
             videoIndex = fileBrowser.fileIndex
-            console.log("FileList index:"+videoIndex)
-            video.source = ""
+            console.log(videoIndex)
             video.source = getVideoURL(videoIndex)
             setVideoPath(fileUrl + "/");
-            console.log("folder:", fileUrl + "/");
+            console.log("设置视频文件夹为:", fileUrl + "/");
             videoSwitchFlag = false
         }
     }
 
     function setVideoPath(path)
     {
-        console.log(path)
         folderModel.folder = path;
     }
     function getVideoURL(idx)

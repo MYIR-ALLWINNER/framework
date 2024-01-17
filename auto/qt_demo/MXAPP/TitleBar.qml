@@ -23,14 +23,13 @@ Item {
 //            mainloader.item.requestActivate()
             mainloader.item.open()
         }
-
     }
 
     property bool checked: false
     property string language_icon:"\uf1ab"
     Rectangle{
         id:languageBt
-        width: 100
+        width: 85
         height: 25
         radius: 10
         anchors.top:parent.top
@@ -48,7 +47,6 @@ Item {
             anchors.verticalCenter: parent.verticalCenter
             anchors.left: parent.left
             anchors.leftMargin: 5
-//            anchors.centerIn: root
         }
         Text {
             id : textEnglish

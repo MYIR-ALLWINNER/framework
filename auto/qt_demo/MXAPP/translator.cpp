@@ -31,10 +31,9 @@ QString Translator::get_current_language()
 void Translator::loadLanguage(QString lang)
 {
     qDebug()<<"load"<<lang;
-    if(NULL == m_translator)
-    {
-        return;
-    }
+    if(m_translator != nullptr)
+        delete m_translator;
+    m_translator = new QTranslator;
 
     if(lang.contains("English"))
     {

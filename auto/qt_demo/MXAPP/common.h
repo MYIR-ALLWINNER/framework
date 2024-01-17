@@ -36,7 +36,6 @@ public:
 //    Q_INVOKABLE void wifiReady();
     QString getWirelessInterfaceStatus(QString interface);
     void parseIwlist(QString buffer);
-	int Runcommand(const char * cmd,char * result, int length);
 
 
     void Start(int interval);

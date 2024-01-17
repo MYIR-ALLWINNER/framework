@@ -9,11 +9,12 @@ Popup {
     modal: false
     focus: true
     closePolicy: Popup.NoAutoClose
-//    width: Screen.desktopAvailableWidth
-//    height: Screen.desktopAvailableHeigh
+    property int adaptive_width: Screen.desktopAvailableWidth
+    property int adaptive_height: Screen.desktopAvailableHeight
+    width: adaptive_width
+    height: adaptive_height
     opacity: 0
     visible: false
-
 
     property bool isdump: false
     property bool showFlag: false
@@ -21,8 +22,6 @@ Popup {
     property string title: qsTr("BaseWindow")
 
     Image{
-//        width: Screen.desktopAvailableWidth
-//        height: Screen.desktopAvailableHeigh
         anchors.fill: parent
         source: "images/wvga/home/background-dark.png"
     }

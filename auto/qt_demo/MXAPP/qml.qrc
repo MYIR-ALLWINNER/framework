@@ -405,68 +405,42 @@
         <file>images/wvga/ecg/ecg_bg5.png</file>
         <file>languages/language_en.ts</file>
         <file>languages/language_zh.ts</file>
-        <file>common.cpp</file>
-        <file>common.h</file>
-        <file>myfunction.cpp</file>
-        <file>myfunction.h</file>
         <file>languages/language_en.qm</file>
         <file>languages/language_zh.qm</file>
         <file>images/fhd/ecg/header_logo.png</file>
         <file>mvideooutput.cpp</file>
         <file>mvideooutput.h</file>
-        <file>videowidgetsurface.cpp</file>
-        <file>videowidgetsurface.h</file>
-        <file>aging/aging.qml</file>
-        <file>aging/aging2.qml</file>
-        <file>aging/camera.qml</file>
-        <file>aging/can.qml</file>
-        <file>aging/developing.qml</file>
-        <file>aging/ethernet.qml</file>
-        <file>aging/memory.qml</file>
-        <file>aging/serial.qml</file>
-        <file>aging/video.qml</file>
-        <file>aging/wifi.qml</file>
-        <file>aging/images/demo-mode-white.png</file>
-        <file>aging/images/demo-mode-white@2x.png</file>
-        <file>WinAppearance.qml</file>
+        <file>images/wvga/public/charge_pile.png</file>
+        <file>ChargeWindow.qml</file>
         <file>WinChargeMonitor.qml</file>
         <file>WinChargeScheme.qml</file>
         <file>WinCloseAccount.qml</file>
         <file>WinHomeScreen.qml</file>
         <file>WinPayInterface.qml</file>
         <file>WinRechargeSelect.qml</file>
-        <file>Charge104.cpp</file>
-        <file>Charge104.h</file>
-        <file>ChargeManage.cpp</file>
-        <file>ChargeManage.h</file>
-        <file>iec104_class.cpp</file>
-        <file>iec104_class.h</file>
-        <file>iec104_types.h</file>
-        <file>qiec104.cpp</file>
-        <file>qiec104.h</file>
-        <file>images/wvga/charge/account.png</file>
         <file>images/wvga/charge/alipay.png</file>
         <file>images/wvga/charge/background.jpg</file>
-        <file>images/wvga/charge/background2.jpg</file>
-        <file>images/wvga/charge/background3.jpg</file>
-        <file>images/wvga/charge/cell.png</file>
-        <file>images/wvga/charge/charge_manage.png</file>
+        <file>images/wvga/charge/pay_success.png</file>
+        <file>images/wvga/charge/wechat.png</file>
+        <file>ChargeManage.cpp</file>
+        <file>ChargeManage.h</file>
+        <file>images/wvga/charge/connect.png</file>
+        <file>images/wvga/charge/disconnect.png</file>
         <file>images/wvga/charge/code.png</file>
         <file>images/wvga/charge/confirm.webp</file>
-        <file>images/wvga/charge/connect.png</file>
+        <file>images/wvga/charge/head.png</file>
+        <file>images/wvga/charge/background2.jpg</file>
+        <file>images/wvga/charge/background3.jpg</file>
+        <file>images/wvga/charge/fee_manage.png</file>
         <file>images/wvga/charge/delta1.png</file>
         <file>images/wvga/charge/delta2.png</file>
         <file>images/wvga/charge/delta3.png</file>
-        <file>images/wvga/charge/disconnect.png</file>
-        <file>images/wvga/charge/fee_manage.png</file>
-        <file>images/wvga/charge/head.png</file>
+        <file>images/wvga/charge/charge_manage.png</file>
         <file>images/wvga/charge/meter_manage.png</file>
         <file>images/wvga/charge/navigation.png</file>
-        <file>images/wvga/charge/pay_success.png</file>
+        <file>images/wvga/charge/cell.png</file>
+        <file>images/wvga/charge/account.png</file>
         <file>images/wvga/charge/pile.png</file>
-        <file>images/wvga/charge/wechat.png</file>
-        <file>images/wvga/charge/矢量智能对象3.png</file>
-        <file>ChargeWindow.qml</file>
         <file>images/wvga/appearance/background.jpg</file>
         <file>images/wvga/appearance/car.png</file>
         <file>images/wvga/appearance/Data.png</file>
@@ -485,7 +459,7 @@
         <file>images/wvga/appearance/right_press.png</file>
         <file>images/wvga/appearance/Up.png</file>
         <file>images/wvga/appearance/up_press.png</file>
+        <file>WinAppearance.qml</file>
         <file>images/wvga/public/appearance.png</file>
-        <file>images/wvga/public/charge_pile.png</file>
     </qresource>
 </RCC>

@@ -143,7 +143,7 @@ Rectangle{
                 horizontalAlignment: Text.AlignLeft
                 verticalAlignment: Text.AlignVCenter
                 font.family: "Microsoft YaHei"
-                font.pointSize: 12
+                font.pixelSize: 15
                 text: qsTr("")
             }
         }
@@ -195,7 +195,7 @@ Rectangle{
                 horizontalAlignment: Text.AlignHCenter
                 verticalAlignment: Text.AlignVCenter
                 font.family: "Microsoft YaHei"
-                font.pointSize: 18
+                font.pixelSize: 35
                 color: "white"
             }
 
@@ -228,7 +228,7 @@ Rectangle{
                 anchors.fill: parent
                 text: qsTr("充电时长:")
                 font.family: "Microsoft YaHei"
-                font.pointSize: mainWnd.height > 500 ? 18 : 8
+                font.pixelSize: mainWnd.height > 500 ? 25 : 15
 
                 horizontalAlignment: Text.AlignRight
                 verticalAlignment: Text.AlignVCenter
@@ -253,7 +253,7 @@ Rectangle{
                 verticalAlignment: Text.AlignVCenter
                 text: ""
                 font.family: "Microsoft YaHei"
-                font.pointSize: mainWnd.height > 500 ? 18 : 8
+                font.pixelSize: mainWnd.height > 500 ? 25 : 15
                 font.underline: true
             }
         }
@@ -274,7 +274,8 @@ Rectangle{
                 anchors.fill: parent
                 text: qsTr("充电电量:")
                 font.family: "Microsoft YaHei"
-                font.pointSize: mainWnd.height > 500 ? 18 : 8
+                font.pixelSize: mainWnd.height > 500 ? 25 : 15
+
                 horizontalAlignment: Text.AlignRight
                 verticalAlignment: Text.AlignVCenter
             }
@@ -298,7 +299,7 @@ Rectangle{
                 verticalAlignment: Text.AlignVCenter
                 text: ""
                 font.family: "Microsoft YaHei"
-                font.pointSize: mainWnd.height > 500 ? 18 : 8
+                font.pixelSize: mainWnd.height > 500 ? 25 : 15
                 font.underline: true
             }
         }
@@ -319,7 +320,7 @@ Rectangle{
                 anchors.fill: parent
                 text: qsTr("充电电费:")
                 font.family: "Microsoft YaHei"
-                font.pointSize: mainWnd.height > 500 ? 18 : 8
+                font.pixelSize: mainWnd.height > 500 ? 25 : 15
 
                 horizontalAlignment: Text.AlignRight
                 verticalAlignment: Text.AlignVCenter
@@ -344,7 +345,7 @@ Rectangle{
                 verticalAlignment: Text.AlignVCenter
                 text: ""
                 font.family: "Microsoft YaHei"
-                font.pointSize: mainWnd.height > 500 ? 18 : 8
+                font.pixelSize: mainWnd.height > 500 ? 25 : 15
                 font.underline: true
             }
         }
@@ -365,7 +366,7 @@ Rectangle{
                 anchors.fill: parent
                 text: qsTr("充电服务费:")
                 font.family: "Microsoft YaHei"
-                font.pointSize: mainWnd.height > 500 ? 18 : 8
+                font.pixelSize: mainWnd.height > 500 ? 25 : 15
 
                 horizontalAlignment: Text.AlignRight
                 verticalAlignment: Text.AlignVCenter
@@ -390,7 +391,7 @@ Rectangle{
                 verticalAlignment: Text.AlignVCenter
                 text: ""
                 font.family: "Microsoft YaHei"
-                font.pointSize: mainWnd.height > 500 ? 18 : 8
+                font.pixelSize: mainWnd.height > 500 ? 25 : 15
                 font.underline: true
             }
         }
@@ -412,7 +413,7 @@ Rectangle{
                 anchors.fill: parent
                 text: qsTr("消费总金额:")
                 font.family: "Microsoft YaHei"
-                font.pointSize: mainWnd.height > 500 ? 18 : 8
+                font.pixelSize: mainWnd.height > 500 ? 25 : 15
 
                 horizontalAlignment: Text.AlignRight
                 verticalAlignment: Text.AlignVCenter
@@ -437,7 +438,7 @@ Rectangle{
                 verticalAlignment: Text.AlignVCenter
                 text: ""
                 font.family: "Microsoft YaHei"
-                font.pointSize: mainWnd.height > 500 ? 18 : 8
+                font.pixelSize: mainWnd.height > 500 ? 25 : 15
                 font.underline: true
             }
         }

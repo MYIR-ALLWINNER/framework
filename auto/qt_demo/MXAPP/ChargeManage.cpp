@@ -2,8 +2,7 @@
 
 ChargeManage::ChargeManage(QObject *parent) : QObject(parent)
 {
-    if(worker.isRunning())
-        worker.exit();
+    worker.start();
     app_path=QApplication::applicationDirPath();
 }
 
@@ -85,16 +84,4 @@ int ChargeManage::get_current()
     int result=file.readAll().toInt();
     file.close();
     return result;
-}
-
-int ChargeManage::set_start()
-{
-    worker.start();
-    return 1;
-}
-
-int ChargeManage::set_stop()
-{
-    worker.exit();
-    return 1;
 }

@@ -6,7 +6,7 @@ import QtQuick.VirtualKeyboard 2.2
 import QtQuick.VirtualKeyboard.Settings 2.2
 import QtQuick.VirtualKeyboard.Styles 2.2
 import QtQuick.Layouts 1.0
-import QtQuick.Controls 2.3 as Controls
+import QtQuick.Controls 2.0 as Controls
 import QtQuick.Window 2.2
 SystemWindow {
     id: settingsWindow
@@ -346,6 +346,7 @@ SystemWindow {
                                         combox_sec.combox_control.currentText + " " + combox_year.combox_control.currentText + " " +
                                         combox_mon.combox_control.currentText + " " +combox_day.combox_control.currentText
                                 getSyetemInfo.set_date(date_string)
+
                             }
                             onExited:{
                                save_button_rec.opacity = 1.0
@@ -381,8 +382,11 @@ SystemWindow {
                         font.bold: true
                         color: "white"
                         anchors{
+
                             left: parent.left
                             leftMargin: 30
+
+
                         }
                     }
 
@@ -905,7 +909,7 @@ SystemWindow {
                                        {
                                            if(wifi_list_model.get(m).signal > wifi_list_model.get(n).signal)
                                                wifi_list_model.move(m,n,1)
-//                                           	break
+//                                           break
                                        }
                                    }
 
@@ -929,7 +933,7 @@ SystemWindow {
                                 else
                                     wifi_list_model.setProperty(k, "wifi_connect_status", qsTr("未启用"))
                             }
-//                          console.log("Received ++: " +wifi_essid_info)
+//                            console.log("Received ++: " +wifi_essid_info)
                         }
                     }
                     Component {
@@ -999,9 +1003,12 @@ SystemWindow {
                                     }
                                 }
                                 anchors{
+
                                     left:parent.left
                                     leftMargin: 100
+
                                 }
+
                             }
                             Image {
                                 id: key_icon
@@ -1059,6 +1066,7 @@ SystemWindow {
 
                                         centerIn:parent
                                     }
+
                                 }
 
                                 MouseArea{

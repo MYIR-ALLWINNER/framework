@@ -1,7 +1,8 @@
-QT += qml quick core gui printsupport testlib quickcontrols2 multimedia multimediawidgets
-greaterThan(QT_MAJOR_VERSION, 4): QT += widgets
+QT += qml quick core gui printsupport testlib quickcontrols2  multimedia multimediawidgets
+
+greaterThan(QT_MAJOR_VERSION, 4): QT += widgets network
 CONFIG += c++11
-CONFIG += qcamera-v4l2
+
 # The following define makes your compiler emit warnings if you use
 # any Qt feature that has been marked deprecated (the exact warnings
 # depend on your compiler). Refer to the documentation for the
@@ -16,7 +17,6 @@ DEFINES += QT_DEPRECATED_WARNINGS
 SOURCES += \
     Charge104.cpp \
     ChargeManage.cpp \
-    ClearCache.cpp \
     iec104_class.cpp \
     logmsg.cpp \
         main.cpp \
@@ -25,8 +25,7 @@ SOURCES += \
     qmlplot.cpp \
     common.cpp \
     myfunction.cpp \
-    qmlprocess.cpp \
-    translator.cpp \
+     translator.cpp  \
     mvideooutput.cpp \
     videowidgetsurface.cpp
 
@@ -51,7 +50,6 @@ else: unix:!android: target.path = /opt/$${TARGET}/bin
 HEADERS += \
     Charge104.h \
     ChargeManage.h \
-    ClearCache.h \
     iec104_class.h \
     iec104_types.h \
     logmsg.h \
@@ -60,7 +58,6 @@ HEADERS += \
     qmlplot.h \
     common.h \
     myfunction.h \
-    qmlprocess.h \
     translator.h \
     mvideooutput.h \
     videowidgetsurface.h

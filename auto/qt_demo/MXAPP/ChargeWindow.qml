@@ -11,8 +11,8 @@ Popup {
     margins: 0
     property int adaptive_width: Screen.desktopAvailableWidth
     property int adaptive_height: Screen.desktopAvailableHeight
-    width: adaptive_width
-    height: adaptive_height
+    width: mainWnd.width
+    height: mainWnd.height
 
     property int server_open_flag: 0//服务器是否打开
     property int client_connect_server_flag: 0//客户端是否连接成功

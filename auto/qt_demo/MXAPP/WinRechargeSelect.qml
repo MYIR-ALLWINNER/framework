@@ -132,7 +132,7 @@ Rectangle {
                 horizontalAlignment: Text.AlignLeft
                 verticalAlignment: Text.AlignVCenter
                 font.family: "Microsoft YaHei"
-                font.pointSize: 10
+                font.pixelSize: 15
                 text: qsTr("")
             }
         }
@@ -169,7 +169,7 @@ Rectangle {
             verticalAlignment: Text.AlignVCenter
             horizontalAlignment: Text.AlignHCenter
             font.family: "Microsoft YaHei"
-            font.pointSize: 20
+            font.pixelSize: 30
             color: "white"
         }
 
@@ -210,7 +210,7 @@ Rectangle {
             verticalAlignment: Text.AlignVCenter
             horizontalAlignment: Text.AlignHCenter
             font.family: "Microsoft YaHei"
-            font.pointSize: 20
+            font.pixelSize: 30
             color: "white"
         }
 
@@ -260,7 +260,7 @@ Rectangle {
             text: qsTr("姓名:许梦燃")+"\t"+qsTr("余额:")+String((home_screen.amount).toFixed(2))
             color: "white"
             font.family: "Microsoft YaHei"
-            font.pointSize: 12
+            font.pixelSize: 20
         }
     }
 
@@ -293,7 +293,7 @@ Rectangle {
             verticalAlignment: "AlignVCenter"
             horizontalAlignment: "AlignHCenter"
             font.family: "Microsoft YaHei"
-            font.pointSize: mainWnd.height > 500 ? 35 : 15
+            font.pixelSize: mainWnd.height > 500 ? 35 : 25
         }
 
         Rectangle{
@@ -328,7 +328,7 @@ Rectangle {
                 horizontalAlignment: Text.AlignHCenter
                 verticalAlignment: Text.AlignVCenter
                 font.family: "Microsoft YaHei"
-                font.pointSize: mainWnd.height > 500 ? 40 : 25
+                font.pixelSize: mainWnd.height > 500 ? 40 : 35
                 color: "white"
             }
 
@@ -365,7 +365,7 @@ Rectangle {
                 horizontalAlignment: Text.AlignHCenter
                 verticalAlignment: Text.AlignVCenter
                 font.family: "Microsoft YaHei"
-                font.pointSize: mainWnd.height > 500 ? 40 : 25
+                font.pixelSize: mainWnd.height > 500 ? 40 : 35
                 color: "white"
             }
 
@@ -402,7 +402,7 @@ Rectangle {
                 horizontalAlignment: Text.AlignHCenter
                 verticalAlignment: Text.AlignVCenter
                 font.family: "Microsoft YaHei"
-                font.pointSize: mainWnd.height > 500 ? 40 : 25
+                font.pixelSize: mainWnd.height > 500 ? 40 : 35
                 color: "white"
             }
 
@@ -440,7 +440,7 @@ Rectangle {
                 horizontalAlignment: Text.AlignHCenter
                 verticalAlignment: Text.AlignVCenter
                 font.family: "Microsoft YaHei"
-                font.pointSize: mainWnd.height > 500 ? 40 : 25
+                font.pixelSize: mainWnd.height > 500 ? 40 : 35
                 color: "white"
             }
 
@@ -478,7 +478,7 @@ Rectangle {
                 horizontalAlignment: Text.AlignHCenter
                 verticalAlignment: Text.AlignVCenter
                 font.family: "Microsoft YaHei"
-                font.pointSize: mainWnd.height > 500 ? 40 : 25
+                font.pixelSize: mainWnd.height > 500 ? 40 : 35
                 color: "white"
             }
 
@@ -516,7 +516,7 @@ Rectangle {
                 horizontalAlignment: Text.AlignHCenter
                 verticalAlignment: Text.AlignVCenter
                 font.family: "Microsoft YaHei"
-                font.pointSize: mainWnd.height > 500 ? 40 : 25
+                font.pixelSize: mainWnd.height > 500 ? 40 : 35
                 color: "white"
             }
 

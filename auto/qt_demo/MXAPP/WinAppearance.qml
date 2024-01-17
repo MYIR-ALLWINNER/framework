@@ -15,8 +15,8 @@ Popup {
     //1280*720
     property int adaptive_width: Screen.desktopAvailableWidth
     property int adaptive_height: Screen.desktopAvailableHeight
-    width: adaptive_width
-    height: adaptive_height
+    width: mainWnd.width
+    height: mainWnd.height
 
     Image {
         anchors.fill: parent
@@ -256,7 +256,7 @@ Popup {
                     anchors.left: parent.left
                     anchors.right: parent.right
                     font.family: "Microsoft YaHei"
-                    font.pointSize: appearance_Wd.height > 500 ? 18 : 8
+                    font.pixelSize: appearance_Wd.height > 500 ? 25 : 15
                     verticalAlignment: Text.AlignVCenter
                     horizontalAlignment: Text.AlignHCenter
                 }
@@ -303,7 +303,7 @@ Popup {
                     anchors.left: parent.left
                     anchors.right: parent.right
                     font.family: "Microsoft YaHei"
-                    font.pointSize: appearance_Wd.height > 500 ? 18 : 8
+                    font.pixelSize: appearance_Wd.height > 500 ? 25 : 15
                     verticalAlignment: Text.AlignVCenter
                     horizontalAlignment: Text.AlignHCenter
                 }
@@ -350,7 +350,7 @@ Popup {
                     anchors.left: parent.left
                     anchors.right: parent.right
                     font.family: "Microsoft YaHei"
-                    font.pointSize: appearance_Wd.height > 500 ? 18 : 8
+                    font.pixelSize: appearance_Wd.height > 500 ? 25 : 15
                     verticalAlignment: Text.AlignVCenter
                     horizontalAlignment: Text.AlignHCenter
                 }
@@ -428,7 +428,7 @@ Popup {
                                 verticalAlignment: Text.AlignVCenter
                                 text: qsTr("大臂")
                                 font.family: "Microsoft YaHei"
-                                font.pointSize: 15
+                                font.pixelSize: 25
                                 color: "white"
                             }
                         }
@@ -550,7 +550,7 @@ Popup {
                                 verticalAlignment: Text.AlignVCenter
                                 text: qsTr("小臂")
                                 font.family: "Microsoft YaHei"
-                                font.pointSize: 15
+                                font.pixelSize: 25
                                 color: "white"
                             }
                         }
@@ -672,7 +672,7 @@ Popup {
                                 verticalAlignment: Text.AlignVCenter
                                 text: qsTr("铲斗")
                                 font.family: "Microsoft YaHei"
-                                font.pointSize: 15
+                                font.pixelSize: 25
                                 color: "white"
                             }
                         }
@@ -795,7 +795,7 @@ Popup {
                                 verticalAlignment: Text.AlignVCenter
                                 text: qsTr("驾驶室")
                                 font.family: "Microsoft YaHei"
-                                font.pointSize: 15
+                                font.pixelSize: 25
                                 color: "white"
                             }
                         }
@@ -929,7 +929,7 @@ Popup {
 
                             Text {
                                 font.family: "Microsoft YaHei"
-                                font.pointSize: 15
+                                font.pixelSize: 25
                                 text: qsTr("大臂角度")
                                 anchors.fill: parent
                                 horizontalAlignment: Text.AlignHCenter
@@ -953,7 +953,7 @@ Popup {
                                 id: boom_data
                                 text: boom_angle.toString()+"°"
                                 font.family: "Microsoft YaHei"
-                                font.pointSize: 15
+                                font.pixelSize: 25
                                 anchors.fill: parent
                                 horizontalAlignment: Text.AlignHCenter
                                 verticalAlignment: Text.AlignVCenter
@@ -986,7 +986,7 @@ Popup {
 
                             Text {
                                 font.family: "Microsoft YaHei"
-                                font.pointSize: 15
+                                font.pixelSize: 25
                                 text: qsTr("小臂角度")
                                 anchors.fill: parent
                                 horizontalAlignment: Text.AlignHCenter
@@ -1010,7 +1010,7 @@ Popup {
                                 id: jib_data
                                 text: jib_angle.toString()+"°"
                                 font.family: "Microsoft YaHei"
-                                font.pointSize: 15
+                                font.pixelSize: 25
                                 anchors.fill: parent
                                 horizontalAlignment: Text.AlignHCenter
                                 verticalAlignment: Text.AlignVCenter
@@ -1043,7 +1043,7 @@ Popup {
 
                             Text {
                                 font.family: "Microsoft YaHei"
-                                font.pointSize: 15
+                                font.pixelSize: 25
                                 text: qsTr("铲斗角度")
                                 anchors.fill: parent
                                 horizontalAlignment: Text.AlignHCenter
@@ -1067,7 +1067,7 @@ Popup {
                                 id: bucket_data
                                 text: bucket_angle.toString()+"°"
                                 font.family: "Microsoft YaHei"
-                                font.pointSize: 15
+                                font.pixelSize: 25
                                 anchors.fill: parent
                                 horizontalAlignment: Text.AlignHCenter
                                 verticalAlignment: Text.AlignVCenter
@@ -1100,7 +1100,7 @@ Popup {
 
                             Text {
                                 font.family: "Microsoft YaHei"
-                                font.pointSize: 15
+                                font.pixelSize: 25
                                 text: qsTr("驾驶室角度")
                                 anchors.fill: parent
                                 horizontalAlignment: Text.AlignHCenter
@@ -1124,7 +1124,7 @@ Popup {
                                 id: cab_data
                                 text: cab_angle.toString()+"°"
                                 font.family: "Microsoft YaHei"
-                                font.pointSize: 15
+                                font.pixelSize: 25
                                 anchors.fill: parent
                                 horizontalAlignment: Text.AlignHCenter
                                 verticalAlignment: Text.AlignVCenter
@@ -1157,7 +1157,7 @@ Popup {
 
                             Text {
                                 font.family: "Microsoft YaHei"
-                                font.pointSize: 15
+                                font.pixelSize: 25
                                 text: qsTr("挖机高度")
                                 anchors.fill: parent
                                 horizontalAlignment: Text.AlignHCenter
@@ -1181,7 +1181,7 @@ Popup {
                                 id: height_data
                                 text: excavator_height.toString()+"m"
                                 font.family: "Microsoft YaHei"
-                                font.pointSize: 15
+                                font.pixelSize: 25
                                 anchors.fill: parent
                                 horizontalAlignment: Text.AlignHCenter
                                 verticalAlignment: Text.AlignVCenter
@@ -1214,7 +1214,7 @@ Popup {
 
                             Text {
                                 font.family: "Microsoft YaHei"
-                                font.pointSize: 15
+                                font.pixelSize: 25
                                 text: qsTr("挖机宽度")
                                 anchors.fill: parent
                                 horizontalAlignment: Text.AlignHCenter
@@ -1238,7 +1238,7 @@ Popup {
                                 id: width_data
                                 text: excavator_width.toString()+"m"
                                 font.family: "Microsoft YaHei"
-                                font.pointSize: 15
+                                font.pixelSize: 25
                                 anchors.fill: parent
                                 horizontalAlignment: Text.AlignHCenter
                                 verticalAlignment: Text.AlignVCenter
@@ -1277,7 +1277,7 @@ Popup {
                             horizontalAlignment: Text.AlignHCenter
                             text: qsTr("车头")
                             font.family: "Microsoft YaHei"
-                            font.pointSize: 15
+                            font.pixelSize: 25
                             color: "white"
                         }
 
@@ -1290,7 +1290,7 @@ Popup {
                             horizontalAlignment: Text.AlignHCenter
                             text: qsTr("车尾")
                             font.family: "Microsoft YaHei"
-                            font.pointSize: 15
+                            font.pixelSize: 25
                             color: "white"
                         }
 
@@ -1303,7 +1303,7 @@ Popup {
                             horizontalAlignment: Text.AlignHCenter
                             text: qsTr("左")
                             font.family: "Microsoft YaHei"
-                            font.pointSize: 15
+                            font.pixelSize: 25
                             color: "white"
                         }
 
@@ -1316,7 +1316,7 @@ Popup {
                             horizontalAlignment: Text.AlignHCenter
                             text: qsTr("右")
                             font.family: "Microsoft YaHei"
-                            font.pointSize: 15
+                            font.pixelSize: 25
                             color: "white"
                         }
 
@@ -1424,7 +1424,7 @@ Popup {
                         horizontalAlignment: Text.AlignHCenter
                         verticalAlignment: Text.AlignVCenter
                         font.family: "Microsoft YaHei"
-                        font.pointSize: appearance_Wd.height > 500 ? 24 : 15
+                        font.pixelSize: appearance_Wd.height > 500 ? 30 : 20
                         color: "white"
                     }
                 }
@@ -1439,7 +1439,7 @@ Popup {
                     Text {
                         id: total_oli_data
                         font.family: "Microsoft YaHei"
-                        font.pointSize: appearance_Wd.height > 500 ? 24 : 15
+                        font.pixelSize: appearance_Wd.height > 500 ? 30 : 20
                         color: "green"
                         horizontalAlignment: Text.AlignLeft
                         verticalAlignment: Text.AlignVCenter
@@ -1468,7 +1468,7 @@ Popup {
                         Text {
                             anchors.fill: parent
                             font.family: "Microsoft YaHei"
-                            font.pointSize: appearance_Wd.height > 500 ? 24 : 15
+                            font.pixelSize: appearance_Wd.height > 500 ? 35 : 30
                             horizontalAlignment: Text.AlignHCenter
                             verticalAlignment: Text.AlignVCenter
                             text: qsTr("累计油耗")
@@ -1548,7 +1548,7 @@ Popup {
                                 anchors.fill: parent
                                 text: qsTr("累计泵送油耗:")
                                 font.family: "Microsoft YaHei"
-                                font.pointSize: appearance_Wd.height > 500 ? 16 : 8
+                                font.pixelSize: appearance_Wd.height > 500 ? 25 : 15
                                 verticalAlignment: Text.AlignVCenter
                                 horizontalAlignment: Text.AlignLeft
                                 color: "white"
@@ -1571,7 +1571,7 @@ Popup {
                                 id: total_pumping_consumption_section_legend_data
                                 anchors.fill: parent
                                 font.family: "Microsoft YaHei"
-                                font.pointSize: appearance_Wd.height > 500 ? 16 : 8
+                                font.pixelSize: appearance_Wd.height > 500 ? 25 : 15
                                 color: "green"
                                 text: qsTr("0.0L")
                                 horizontalAlignment: Text.AlignHCenter
@@ -1623,7 +1623,7 @@ Popup {
                                 anchors.fill: parent
                                 text: qsTr("累计臂架油耗:")
                                 font.family: "Microsoft YaHei"
-                                font.pointSize: appearance_Wd.height > 500 ? 16 : 8
+                                font.pixelSize: appearance_Wd.height > 500 ? 25 : 15
                                 verticalAlignment: Text.AlignVCenter
                                 horizontalAlignment: Text.AlignLeft
                                 color: "white"
@@ -1646,7 +1646,7 @@ Popup {
                                 id: total_boom_consumption_section_legend_data
                                 anchors.fill: parent
                                 font.family: "Microsoft YaHei"
-                                font.pointSize: appearance_Wd.height > 500 ? 16 : 8
+                                font.pixelSize: appearance_Wd.height > 500 ? 25 : 15
                                 color: "green"
                                 text: qsTr("0.0L")
                                 horizontalAlignment: Text.AlignHCenter
@@ -1697,7 +1697,7 @@ Popup {
                                 anchors.fill: parent
                                 text: qsTr("累计怠速油耗:")
                                 font.family: "Microsoft YaHei"
-                                font.pointSize: appearance_Wd.height > 500 ? 16 : 8
+                                font.pixelSize: appearance_Wd.height > 500 ? 25 : 15
                                 verticalAlignment: Text.AlignVCenter
                                 horizontalAlignment: Text.AlignLeft
                                 color: "white"
@@ -1720,7 +1720,7 @@ Popup {
                                 id: total_idle_consumption_section_legend_data
                                 anchors.fill: parent
                                 font.family: "Microsoft YaHei"
-                                font.pointSize: appearance_Wd.height > 500 ? 16 : 8
+                                font.pixelSize: appearance_Wd.height > 500 ? 25 : 15
                                 color: "green"
                                 text: qsTr("0.0L")
                                 horizontalAlignment: Text.AlignHCenter
@@ -1754,7 +1754,7 @@ Popup {
                         Text {
                             anchors.fill: parent
                             font.family: "Microsoft YaHei"
-                            font.pointSize: appearance_Wd.height > 500 ? 24 : 15
+                            font.pixelSize: appearance_Wd.height > 500 ? 35 : 30
                             horizontalAlignment: Text.AlignHCenter
                             verticalAlignment: Text.AlignVCenter
                             text: qsTr("实时油耗")
@@ -1833,7 +1833,7 @@ Popup {
                                 anchors.fill: parent
                                 text: qsTr("本次泵送油耗:")
                                 font.family: "Microsoft YaHei"
-                                font.pointSize: appearance_Wd.height > 500 ? 16 : 8
+                                font.pixelSize: appearance_Wd.height > 500 ? 25 : 15
                                 verticalAlignment: Text.AlignVCenter
                                 horizontalAlignment: Text.AlignLeft
                                 color: "white"
@@ -1856,7 +1856,7 @@ Popup {
                                 id: pumping_consumption_section_legend_data
                                 anchors.fill: parent
                                 font.family: "Microsoft YaHei"
-                                font.pointSize: appearance_Wd.height > 500 ? 16 : 8
+                                font.pixelSize: appearance_Wd.height > 500 ? 25 : 15
                                 color: "green"
                                 text: qsTr("0.0L")
                                 horizontalAlignment: Text.AlignHCenter
@@ -1908,7 +1908,7 @@ Popup {
                                 anchors.fill: parent
                                 text: qsTr("本次臂架油耗:")
                                 font.family: "Microsoft YaHei"
-                                font.pointSize: appearance_Wd.height > 500 ? 16 : 8
+                                font.pixelSize: appearance_Wd.height > 500 ? 25 : 15
                                 verticalAlignment: Text.AlignVCenter
                                 horizontalAlignment: Text.AlignLeft
                                 color: "white"
@@ -1931,7 +1931,7 @@ Popup {
                                 id: boom_consumption_section_legend_data
                                 anchors.fill: parent
                                 font.family: "Microsoft YaHei"
-                                font.pointSize: appearance_Wd.height > 500 ? 16 : 8
+                                font.pixelSize: appearance_Wd.height > 500 ? 25 : 15
                                 color: "green"
                                 text: qsTr("0.0L")
                                 horizontalAlignment: Text.AlignHCenter
@@ -1982,7 +1982,7 @@ Popup {
                                 anchors.fill: parent
                                 text: qsTr("本次怠速油耗:")
                                 font.family: "Microsoft YaHei"
-                                font.pointSize: appearance_Wd.height > 500 ? 16 : 8
+                                font.pixelSize: appearance_Wd.height > 500 ? 25 : 15
                                 verticalAlignment: Text.AlignVCenter
                                 horizontalAlignment: Text.AlignLeft
                                 color: "white"
@@ -2005,7 +2005,7 @@ Popup {
                                 id: idle_consumption_section_legend_data
                                 anchors.fill: parent
                                 font.family: "Microsoft YaHei"
-                                font.pointSize: appearance_Wd.height > 500 ? 16 : 8
+                                font.pixelSize: appearance_Wd.height > 500 ? 25 : 15
                                 color: "green"
                                 text: qsTr("0.0L")
                                 horizontalAlignment: Text.AlignHCenter
@@ -2046,7 +2046,7 @@ Popup {
                         currentIndex: 0
                         width: 150
                         font.family: "Microsoft YaHei"
-                        font.pointSize: appearance_Wd.height > 500 ? 25 : 10
+                        font.pointSize: appearance_Wd.height > 500 ? 25 : 15
                         model: ListModel{
                             id: year_listModel
                         }
@@ -2068,7 +2068,7 @@ Popup {
                             horizontalAlignment: Text.AlignHCenter
                             verticalAlignment: Text.AlignVCenter
                             font.family: "Microsoft YaHei"
-                            font.pointSize: 12
+                            font.pixelSize: 25
                             color: "white"
                         }
                     }
@@ -2082,7 +2082,7 @@ Popup {
                         currentIndex: 0
                         width: 150
                         font.family: "Microsoft YaHei"
-                        font.pointSize: appearance_Wd.height > 500 ? 25 : 12
+                        font.pointSize: appearance_Wd.height > 500 ? 25 : 15
                         model: ListModel{
                             id:month_listModel
                         }
@@ -2104,7 +2104,7 @@ Popup {
                             horizontalAlignment: Text.AlignHCenter
                             verticalAlignment: Text.AlignVCenter
                             font.family: "Microsoft YaHei"
-                            font.pointSize: 12
+                            font.pixelSize: 25
                             color: "white"
                         }
                     }
@@ -2124,7 +2124,7 @@ Popup {
                             horizontalAlignment: Text.AlignHCenter
                             verticalAlignment: Text.AlignVCenter
                             font.family: "Microsoft YaHei"
-                            font.pointSize: 12
+                            font.pixelSize: 25
                             text: qsTr("选择时间")
                         }
 
@@ -2263,7 +2263,7 @@ Popup {
                                     horizontalAlignment: Text.AlignHCenter
                                     verticalAlignment: Text.AlignVCenter
                                     font.family: "Microsoft YaHei"
-                                    font.pointSize: 12
+                                    font.pixelSize: 25
                                     color: "white"
                                 }
                             }
@@ -2282,7 +2282,7 @@ Popup {
                                     horizontalAlignment: Text.AlignHCenter
                                     verticalAlignment: Text.AlignVCenter
                                     font.family: "Microsoft YaHei"
-                                    font.pointSize: 12
+                                    font.pixelSize: 25
                                     color: "white"
                                 }
                             }
@@ -2301,7 +2301,7 @@ Popup {
                                     horizontalAlignment: Text.AlignHCenter
                                     verticalAlignment: Text.AlignVCenter
                                     font.family: "Microsoft YaHei"
-                                    font.pointSize: 12
+                                    font.pixelSize: 25
                                     color: "white"
                                 }
                             }
@@ -2320,7 +2320,7 @@ Popup {
                                     horizontalAlignment: Text.AlignHCenter
                                     verticalAlignment: Text.AlignVCenter
                                     font.family: "Microsoft YaHei"
-                                    font.pointSize: 12
+                                    font.pixelSize: 25
                                     color: "white"
                                 }
                             }
@@ -2339,7 +2339,7 @@ Popup {
                                     horizontalAlignment: Text.AlignHCenter
                                     verticalAlignment: Text.AlignVCenter
                                     font.family: "Microsoft YaHei"
-                                    font.pointSize: 12
+                                    font.pixelSize: 25
                                     color: "white"
                                 }
                             }
@@ -2368,7 +2368,7 @@ Popup {
                                     horizontalAlignment: Text.AlignHCenter
                                     verticalAlignment: Text.AlignVCenter
                                     font.family: "Microsoft YaHei"
-                                    font.pointSize: 12
+                                    font.pixelSize: 25
                                     color: "white"
                                 }
                             }
@@ -2386,7 +2386,7 @@ Popup {
                                     horizontalAlignment: Text.AlignHCenter
                                     verticalAlignment: Text.AlignVCenter
                                     font.family: "Microsoft YaHei"
-                                    font.pointSize: 12
+                                    font.pixelSize: 25
                                     color: "white"
                                 }
                             }
@@ -2476,7 +2476,7 @@ Popup {
                                     horizontalAlignment: Text.AlignHCenter
                                     verticalAlignment: Text.AlignVCenter
                                     font.family: "Microsoft YaHei"
-                                    font.pointSize: 12
+                                    font.pixelSize: 25
                                     color: "white"
                                 }
                             }
@@ -2493,7 +2493,7 @@ Popup {
                                     horizontalAlignment: Text.AlignHCenter
                                     verticalAlignment: Text.AlignVCenter
                                     font.family: "Microsoft YaHei"
-                                    font.pointSize: 12
+                                    font.pixelSize: 25
                                     color: "white"
                                 }
                             }
@@ -2583,7 +2583,7 @@ Popup {
                                     horizontalAlignment: Text.AlignHCenter
                                     verticalAlignment: Text.AlignVCenter
                                     font.family: "Microsoft YaHei"
-                                    font.pointSize: 12
+                                    font.pixelSize: 25
                                     color: "white"
                                 }
                             }
@@ -2600,7 +2600,7 @@ Popup {
                                     horizontalAlignment: Text.AlignHCenter
                                     verticalAlignment: Text.AlignVCenter
                                     font.family: "Microsoft YaHei"
-                                    font.pointSize: 12
+                                    font.pixelSize: 25
                                     color: "white"
                                 }
                             }
