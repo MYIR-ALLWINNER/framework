@@ -1,0 +1,7 @@
+model        MYD_YT113
+version      1.1.0
+bootloader   2018.02
+kernel       5.4.61+
+rootfs       2019.02
+app          2.1
+time      202309131938
