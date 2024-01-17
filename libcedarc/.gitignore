@@ -24,3 +24,5 @@ Makefile
 .deps/
 libtool
 stamp-h1
+demo/vdecoderDemo/vdecoderdemo
+demo/vencoderDemo/demoVencoder
