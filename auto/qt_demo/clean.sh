@@ -26,6 +26,7 @@ if [ -d ./MediaUI ];then
 fi
 
 if [ -d ./ui_qt_simple ];then
+	echo "=====clean ui_qt_simple success!!!======"
 	#cd ./ui_qt_simple
 	#make distclean 
 	#cd ../
