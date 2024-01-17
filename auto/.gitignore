@@ -22,6 +22,9 @@ sdk_demo/usbcam_test/usbcam_test
 sdk_demo/yuvtest/yuvtest
 sdk_demo/csitest/csitestT113_ptr
 sdk_demo/lcd_bright/lcdbright
+sdk_demo/picshow/picshow
+sdk_demo/streamPlayerTest/StreamPlayer
+sdk_demo/uarttest/uart_fortest
 sdk_lib/cedarx/include/libcedarc/include/Android.bp
 
 sdk_demo/bin/*
