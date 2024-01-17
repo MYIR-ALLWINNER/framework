@@ -25,3 +25,11 @@ Makefile
 .deps/
 libtool
 stamp-h1
+demo/demoVdecoder/demoVdecoder
+demo/demoVencVdec/demoVencVdec
+demo/jpegdemo/jpegdemo
+demo/muxtest/muxdemo
+demo/parserdemo/parserdemo
+demo/recoderdemo/recoderdemo
+demo/xmetademo/xmetademo
+demo/xplayerdemo/xplayerdemo
